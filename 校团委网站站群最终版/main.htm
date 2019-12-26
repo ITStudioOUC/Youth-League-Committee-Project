@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/init.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/animation.css">
+    <title>中国海洋大学校团委</title>
+    <style>
+   .extend_website {
+       height: 559px !important;
+       border-radius: 5px !important;
+   }
+   .extend_website .item-name {
+       color: #CD0708 !important;
+   }
+
+   .wp_article_list .list_item {
+       height: initial !important;
+   }
+   .nav_item .child_list_item .wp_article_list .list_item {
+       display: flex;
+       justify-content: center;
+   }
+   .nav_item .child_list_item .wp_article_list .list_item .pr_fields {
+       display: block;
+       float: none;
+   }
+   .nav_item .child_list_item .wp_article_list .list_item .pr_fields .Article_Title {
+       float: none;
+       display: block;
+       line-height: 16px;  
+   }
+   .nav_item .child_list_item .wp_article_list .list_item .pr_fields .Article_Title a {
+       color: #FFFFFF;
+   }
+
+        .moretext {
+            transform: none !important;
+            border: none !important;
+            width: 50px !important;
+            display: block;
+        }
+        .moretext font{
+            font-size: 20px;
+            display: block;
+        }
+        .Article_Index {
+            display: none !important;
+        }
+
+        #container #banner_window {
+            box-sizing: content-box !important;
+        }
+
+        #container #banner_window .banner_window_new {
+            height: 500px;
+            position: relative;
+            padding-bottom: 88px;
+            overflow: hidden;
+            box-sizing: content-box !important;
+        }
+
+        #container #banner_window .banner_window_new .banner_container_new {
+            width: 9515px;
+            height: 500px;
+            position: absolute;
+            left: 0;
+            transition: left .5s ease;
+        }
+
+        #container #banner_window .banner_window_new .banner_container_new .banner_item_new {
+            width: 1903px;
+            height: 500px;
+            position: relative;
+            float: left;
+        }
+
+        #container #banner_window .banner_window_new .banner_container_new .banner_item_new .c_pic a {
+            display: block;
+            width: 100%;
+            height: 500px;
+        }
+
+        #container #banner_window .banner_window_new .banner_container_new .banner_item_new .c_pic a span {
+            display: block;
+            width: 100%;
+            height: 500px;
+        }
+
+        #container #banner_window .banner_window_new .banner_container_new .banner_item_new .c_pic a span img {
+            dislpay: block;
+            width: 100%;
+            height: 500px;
+        }
+
+        #container #banner_window .banner_window_new .banner_container_new .banner_item_new .c_txt {
+            width: 100%;
+            background: #CD0708;
+            padding: 34px 0 28px 318px;
+        }
+
+        #container #banner_window .banner_window_new .banner_container_new .banner_item_new .c_txt span {
+            display: inline-block;
+            color: #FFFFFF;
+            font-size: 24px;
+            font-weight: 400;
+            font-family: "";
+            line-height: 23px;
+        }
+
+        #container #body_container .status_panel_container .status_panel {
+            height: 555px !important;
+            position: relative;
+        }
+
+        #container #body_container .status_panel_container .status_panel .content_father_container ul li:first-child {
+            margin-bottom: 20px;
+            width: 100%;
+            height: 24px;
+        }
+
+        #container #body_container .status_panel_container .status_panel .content_father_container ul {
+            width: 380px;
+            margin-top: 54px !important;
+            position: relative;
+        }
+
+        #container #body_container .status_panel_container .status_panel .content_father_container ul:after {
+            position: absolute;
+            content: '';
+            display: block;
+            background: #CD0708;
+            width: 73px;
+            height: 6px;
+            left: 0;
+            top: -26px;
+        }
+
+        #container #body_container .status_panel_container .status_panel .content_father_container ul li .Article_Title a {
+            color: #3C3C3C !important;
+            font-size: 18px !important;
+            font-weight: bold !important;
+            line-height: 19px !important;
+        }
+
+        #container #body_container .status_panel_container .status_panel .content_father_container ul li {
+            margin-bottom: 20px;
+            height: 61px !important;
+        }
+
+        #container #body_container .status_panel_container .status_panel .content_father_container ul li .pr_fields {
+            display: inline-block;
+            float: none;
+            width: 297px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            word-break: break-all;
+        }
+
+        #container #body_container .status_panel_container .status_panel .content_father_container ul li .pr_fields .Article_Title a {
+            width: 297px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            word-break: break-all;
+            display: inline-block;
+        }
+
+        #container #body_container .status_panel_container .status_panel .content_father_container ul li .ex_fields {
+            display: inline-block;
+            float: none;
+        }
+
+        #container #body_container .status_panel_container .status_panel .content_father_container ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        #container #body_container .status_panel_container .status_panel .content_father_container {
+            width: 380px;
+        }
+
+        .wp_article_list li {
+            border: none !important;
+        }
+
+        .wp_article_list li {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .wp_article_list li .Article_PublishDate {
+            float: none !important;
+            margin-left: 0 !important;
+            background: #CD0708;
+            padding: 22px 10px 23px 9px;
+            border-radius: 3px;
+            color: #FFFFFF !important;
+            font-size: 18px !important;
+            font-weight: bold;
+            line-height: 16px !important;
+            width: 72px;
+            box-sizing: border-box;
+        }
+
+        .Article_Title {
+            margin-left: 0 !important;
+        }
+
+        #container #ouc_youth .img_list .div_piccontenttitle_ul {
+            width: 1135px;
+        }
+
+        #container #ouc_youth .img_list .div_piccontenttitle_ul .div_piccontenttitle_li {
+            width: 360px;
+            height: 240px;
+        }
+
+        #container #ouc_youth .img_list .div_piccontenttitle_ul .div_piccontenttitle_li:nth-child(1) {
+            width: 750px;
+            height: 500px;
+            float: left;
+        }
+
+        #container #ouc_youth .img_list .div_piccontenttitle_ul .div_piccontenttitle_li:nth-child(2) {
+            margin: 0 0 0 775px;
+        }
+
+        #container #ouc_youth .img_list .div_piccontenttitle_ul .div_piccontenttitle_li:nth-child(3) {
+            margin: 20px 0 0 775px;
+        }
+
+        #container #ouc_youth .img_list .div_piccontenttitle_ul .div_piccontenttitle_li:nth-child(4) {
+            margin: 20px 0 0 775px;
+        }
+
+        #container #ouc_youth .img_list .div_piccontenttitle_ul .div_piccontenttitle_li:nth-child(5) {
+            margin: -240px 0 0 390px;
+        }
+
+        #container #ouc_youth .img_list .div_piccontenttitle_ul .div_piccontenttitle_li:nth-child(6) {
+            margin: -240px 0 0 0;
+        }
+
+        #container #ouc_youth .img_list .div_piccontenttitle_ul .div_piccontenttitle_li {
+            position: relative;
+            cursor: pointer;
+        }
+
+        #container #ouc_youth .img_list .div_piccontenttitle_ul .div_piccontenttitle_li .c_pic {
+            width: 100%;
+            height: 100%;
+        }
+
+        #container #ouc_youth .img_list .div_piccontenttitle_ul .div_piccontenttitle_li .c_pic a {
+            display: initial;
+        }
+
+        #container #ouc_youth .img_list .div_piccontenttitle_ul .div_piccontenttitle_li .c_pic img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #container #ouc_youth .img_list .div_piccontenttitle_ul .div_piccontenttitle_li .c_txt {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            -webkit-transition: opacity .3s ease;
+            transition: opacity .3s ease;
+        }
+
+        #container #ouc_youth .img_list .div_piccontenttitle_ul .div_piccontenttitle_li .c_txt:hover {
+            opacity: 1;
+        }
+
+        #container #ouc_youth .img_list .div_piccontenttitle_ul .div_piccontenttitle_li .c_txt .cover {
+            z-index: 1;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 100%;
+            height: 100%;
+            background: #CD0708;
+            opacity: 0.54;
+        }
+
+        #container #ouc_youth .img_list .div_piccontenttitle_ul .div_piccontenttitle_li .c_txt a {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+
+        #container #ouc_youth .img_list .div_piccontenttitle_ul .div_piccontenttitle_li .c_txt a span {
+            color: #FFFFFF;
+            font-size: 20px;
+            font-weight: normal;
+            font-family: "";
+            line-height: 30px;
+            display: block;
+            width: 288px;
+            display: -webkit-box;
+            overflow: hidden;
+            white-space: normal;
+            text-overflow: ellipsis;
+            word-wrap: break-word;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        #container #ouc_youth .img_list .div_piccontenttitle_ul .div_piccontenttitle_li:first-child .c_txt a span {
+            display: block;
+            width: 560px;
+            display: -webkit-box;
+            overflow: hidden;
+            white-space: normal;
+            text-overflow: ellipsis;
+            word-wrap: break-word;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+        }
+    </style>
+</head>
+<body>
+<div id="header">
+    <div class="header_logo_panel">
+        <div class="container">
+            <div class="left">
+                <a href="" class="youth_logo">
+                    <img src="./images/tw.png" alt="" class="logo">
+                    <img src="./images/textlogo@2x.png" alt="" class="text">
+                </a>
+            </div>
+            <div class="right">
+                <img src="./images/slogan@2x.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="header_navigator">
+        <div class="navigator_container">
+            <div class="temp">
+                <div class="nav_item nav_link" frag="窗口00" portletmode="simpleSudyNavi" configs="{'c5':'2','c9':'0','c6':'377','c4':'_self','c8':'2','c2':'1','c7':'2','c3':'6','c1':'1'}" contents="{'c2':'0'}">
+                    首页
+                </div>
+            </div>
+            <div class="nav_item extend_button">
+                组织结构
+                <div class="child_list">
+                    <div class="child_list_item" frag="窗口01" portletmode="simpleNews" configs="{'c28':'320','c14':'1','c1':'1','c29':'1','c39':'300','c38':'100','c21':'0','c4':'1','c6':'4','c9':'0','c12':'0','c30':'0','c37':'1','c31':'0','c16':'1','c27':'320','c15':'0','c32':'','c5':'_blank','c40':'1','c17':'0','c19':'yyyy-MM-dd','c33':'500','c2':'标题','c23':'1','c41':'240','c22':'0','c7':'1','c13':'200','c43':'0','c24':'240','c35':'-1:-1','c3':'1','c8':'1','c44':'0','c25':'320','c34':'300','c18':'yyyy-MM-dd','c20':'0','c42':'320','c10':'50','c11':'1','c36':'0','c26':'1'}" contents="{'c2':'0'}">
+                        团委介绍
+                    </div>
+                    <div class="child_list_item" frag="窗口02" portletmode="simpleNews" configs="{'c28':'320','c14':'1','c1':'1','c29':'1','c39':'300','c38':'100','c21':'0','c4':'1','c6':'4','c9':'0','c12':'0','c30':'0','c37':'1','c31':'0','c16':'1','c27':'320','c15':'0','c32':'','c5':'_blank','c40':'1','c17':'0','c19':'yyyy-MM-dd','c33':'500','c2':'标题','c23':'1','c41':'240','c22':'0','c7':'1','c13':'200','c43':'0','c24':'240','c35':'-1:-1','c3':'1','c8':'1','c44':'0','c25':'320','c34':'300','c18':'yyyy-MM-dd','c20':'0','c42':'320','c10':'50','c11':'1','c36':'0','c26':'1'}" contents="{'c2':'0'}">
+                        团委介绍
+                    </div>
+                    <div class="child_list_item" frag="窗口03" portletmode="simpleNews" configs="{'c28':'320','c14':'1','c1':'1','c29':'1','c39':'300','c38':'100','c21':'0','c4':'1','c6':'4','c9':'0','c12':'0','c30':'0','c37':'1','c31':'0','c16':'1','c27':'320','c15':'0','c32':'','c5':'_blank','c40':'1','c17':'0','c19':'yyyy-MM-dd','c33':'500','c2':'标题','c23':'1','c41':'240','c22':'0','c7':'1','c13':'200','c43':'0','c24':'240','c35':'-1:-1','c3':'1','c8':'1','c44':'0','c25':'320','c34':'300','c18':'yyyy-MM-dd','c20':'0','c42':'320','c10':'50','c11':'1','c36':'0','c26':'1'}" contents="{'c2':'0'}">
+                        团委介绍
+                    </div>
+                </div>
+            </div>
+            <div class="temp">
+                <div class="nav_item nav_link" frag="窗口04" portletmode="simpleSudyNavi" configs="{'c5':'2','c9':'0','c6':'377','c4':'_self','c8':'2','c2':'1','c7':'2','c3':'6','c1':'1'}" contents="{'c2':'0'}">
+                    公告通知
+                </div>
+            </div>
+            <div class="temp">
+                <div class="nav_item nav_link" frag="窗口05" portletmode="simpleSudyNavi" configs="{'c5':'2','c9':'0','c6':'377','c4':'_self','c8':'2','c2':'1','c7':'2','c3':'6','c1':'1'}" contents="{'c2':'0'}">
+                    工作动态
+                </div>
+            </div>
+            <div class="nav_item extend_button">
+                聚焦一线
+                <div class="child_list">
+                    <div class="child_list_item" frag="窗口06" portletmode="simpleSudyNavi" configs="{'c5':'2','c9':'0','c6':'377','c4':'_self','c8':'2','c2':'1','c7':'2','c3':'6','c1':'1'}" contents="{'c2':'0'}">
+                        基层风采
+                    </div>
+                    <div class="child_list_item" frag="窗口07" portletmode="simpleSudyNavi" configs="{'c5':'2','c9':'0','c6':'377','c4':'_self','c8':'2','c2':'1','c7':'2','c3':'6','c1':'1'}" contents="{'c2':'0'}">
+                        青年聚焦
+                    </div>
+                </div>
+            </div>
+            <div class="nav_item extend_button">
+                思想引领
+                <div class="child_list">
+                    <div class="child_list_item" frag="窗口08" portletmode="simpleSudyNavi" configs="{'c5':'2','c9':'0','c6':'377','c4':'_self','c8':'2','c2':'1','c7':'2','c3':'6','c1':'1'}" contents="{'c2':'0'}">
+                        主题教育
+                    </div>
+                    <div class="child_list_item" frag="窗口09" portletmode="simpleSudyNavi" configs="{'c5':'2','c9':'0','c6':'377','c4':'_self','c8':'2','c2':'1','c7':'2','c3':'6','c1':'1'}" contents="{'c2':'0'}">
+                        青马工程
+                    </div>
+                </div>
+            </div>
+            <div class="temp">
+                <div class="nav_item nav_link" frag="窗口10" portletmode="simpleSudyNavi" configs="{'c5':'2','c9':'0','c6':'377','c4':'_self','c8':'2','c2':'1','c7':'2','c3':'6','c1':'1'}" contents="{'c2':'0'}">
+                    社会实践
+                </div>
+            </div>
+            <div class="temp">
+                <div class="nav_item nav_link" frag="窗口11" portletmode="simpleSudyNavi" configs="{'c5':'2','c9':'0','c6':'377','c4':'_self','c8':'2','c2':'1','c7':'2','c3':'6','c1':'1'}" contents="{'c2':'0'}">
+                    志愿服务
+                </div>
+            </div>
+            <div class="temp">
+                <div class="nav_item nav_link" frag="窗口12" portletmode="simpleSudyNavi" configs="{'c5':'2','c9':'0','c6':'377','c4':'_self','c8':'2','c2':'1','c7':'2','c3':'6','c1':'1'}" contents="{'c2':'0'}">
+                    创新创业
+                </div>
+            </div>
+            <div class="temp">
+                <div class="nav_item nav_link" frag="窗口500" portletmode="simpleSudyNavi" configs="{'c5':'2','c9':'0','c6':'377','c4':'_self','c8':'2','c2':'1','c7':'2','c3':'6','c1':'1'}" contents="{'c2':'0'}">
+                    校园文化
+                </div>
+            </div>
+            <div class="nav_item extend_button">
+                学生会组织
+                <div class="child_list">
+                    <div class="child_list_item" frag="窗口14" portletmode="simpleSudyNavi" configs="{'c5':'2','c9':'0','c6':'377','c4':'_self','c8':'2','c2':'1','c7':'2','c3':'6','c1':'1'}" contents="{'c2':'0'}">
+                        学生会
+                    </div>
+                    <div class="child_list_item" frag="窗口600" portletmode="simpleSudyNavi" configs="{'c5':'2','c9':'0','c6':'377','c4':'_self','c8':'2','c2':'1','c7':'2','c3':'6','c1':'1'}" contents="{'c2':'0'}">
+                        研究生会
+                    </div>
+                    <div class="child_list_item" frag="窗口16" portletmode="simpleSudyNavi" configs="{'c5':'2','c9':'0','c6':'377','c4':'_self','c8':'2','c2':'1','c7':'2','c3':'6','c1':'1'}" contents="{'c2':'0'}">
+                        学生社团
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="container">
+    <div id="banner_window">
+        <div class="banner_window_new" frag="窗口252" portletmode="tpl2_tbtwhp" contents="{'c2':'0'}"></div>
+        <ul class="button_box">
+            <li class="button selected">
+                <a href="javascript:void(0)" class="button_child">
+
+                </a>
+            </li>
+            <li class="button">
+                <a href="javascript:void(0)" class="button_child">
+
+                </a>
+            </li>
+            <li class="button">
+                <a href="javascript:void(0)" class="button_child">
+
+                </a>
+            </li>
+            <li class="button">
+                <a href="javascript:void(0)" class="button_child">
+
+                </a>
+            </li>
+            <li class="button">
+                <a href="javascript:void(0)" class="button_child">
+
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div id="body_container">
+        <!--工作动态/公告通知-->
+        <div class="back_temp"></div>
+        <div class="status_panel_container">
+            <div class="status_panel">
+                <div class="title_container">
+                    <div class="left">
+                        公告<span>通知</span>
+                    </div>
+                    <div class="right" frag="窗口577" portletmode="simpleNews" configs="{'c28':'320','c14':'1','c1':'1','c29':'1','c39':'300','c38':'100','c21':'1','c4':'1','c6':'0','c9':'0','c12':'0','c30':'0','c37':'1','c31':'0','c16':'1','c27':'320','c15':'0','c32':'','c5':'_blank','c40':'1','c17':'0','c19':'yyyy-MM-dd','c33':'500','c2':'序号,标题,发布时间','c23':'1','c41':'240','c22':'10022','c7':'1','c13':'200','c43':'0','c24':'240','c35':'-1:-1','c3':'0','c8':'1','c44':'0','c25':'320','c34':'300','c18':'yyyy-MM-dd','c20':'0','c42':'320','c10':'50','c11':'1','c36':'0','c26':'1'}" contents="{'c2':'0'}">
+                        <a href="javascript:void(0)">
+                            更多<span></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="content_father_container" frag="窗口299" portletmode="simpleNews" configs="{'c28':'320','c14':'1','c1':'1','c29':'1','c39':'300','c38':'100','c21':'0','c4':'1','c6':'-1','c9':'0','c12':'0','c30':'0','c37':'1','c31':'0','c16':'1','c27':'320','c15':'0','c32':'','c5':'_blank','c40':'1','c17':'0','c19':'MM-dd','c33':'500','c2':'序号,标题,发布时间','c23':'1','c41':'240','c22':'0','c7':'1','c13':'200','c43':'0','c24':'240','c35':'-1:-1','c3':'6','c8':'1','c44':'0','c25':'320','c34':'300','c18':'yyyy-MM-dd','c20':'0','c42':'320','c10':'50','c11':'1','c36':'0','c26':'1'}" contents="{'c2':'0'}">
+
+                </div>
+            </div>
+            <div class="status_panel">
+                <div class="title_container">
+                    <div class="left">
+                        工作<span>动态</span>
+                    </div>
+                    <div class="right" frag="窗口578" portletmode="simpleNews" configs="{'c28':'320','c14':'1','c1':'1','c29':'1','c39':'300','c38':'100','c21':'1','c4':'1','c6':'0','c9':'0','c12':'0','c30':'0','c37':'1','c31':'0','c16':'1','c27':'320','c15':'0','c32':'','c5':'_blank','c40':'1','c17':'0','c19':'yyyy-MM-dd','c33':'500','c2':'序号,标题,发布时间','c23':'1','c41':'240','c22':'10022','c7':'1','c13':'200','c43':'0','c24':'240','c35':'-1:-1','c3':'0','c8':'1','c44':'0','c25':'320','c34':'300','c18':'yyyy-MM-dd','c20':'0','c42':'320','c10':'50','c11':'1','c36':'0','c26':'1'}" contents="{'c2':'0'}">
+                        <a href="javascript:void(0)">
+                            更多<span></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="content_father_container" frag="窗口350" portletmode="simpleNews" configs="{'c28':'320','c14':'1','c1':'1','c29':'1','c39':'300','c38':'100','c21':'0','c4':'1','c6':'-1','c9':'0','c12':'0','c30':'0','c37':'1','c31':'0','c16':'1','c27':'320','c15':'0','c32':'','c5':'_blank','c40':'1','c17':'0','c19':'MM-dd','c33':'500','c2':'序号,标题,发布时间','c23':'1','c41':'240','c22':'0','c7':'1','c13':'200','c43':'0','c24':'240','c35':'-1:-1','c3':'6','c8':'1','c44':'0','c25':'320','c34':'300','c18':'yyyy-MM-dd','c20':'0','c42':'320','c10':'50','c11':'1','c36':'0','c26':'1'}" contents="{'c2':'0'}">
+
+                </div>
+            </div>
+            <div class="extend_website">
+                <div class="website">
+                    <div class="icon" frag="窗口888" portletmode="articlecontent" contents="{'c2':'0'}">
+                        <img src="./images/download.png" alt="">
+                    </div>
+                    <div class="large_hint" frag="窗口111" portletmode="simpleSudyNavi" configs="{'c5':'0','c9':'0','c6':'377','c4':'_self','c8':'2','c2':'1','c7':'2','c3':'6','c1':'1'}" contents="{'c2':'0'}">
+                        常用下载
+                    </div>
+                    <p class="small_hint">
+                        Download
+                    </p>
+                </div>
+                <div class="website">
+                    <div class="icon" frag="窗口887" portletmode="articlecontent" contents="{'c2':'0'}">
+                        <img src="./images/request.png" alt="">
+                    </div>
+                    <div class="large_hint" frag="窗口112" portletmode="articlecontent" contents="{'c2':'0'}">
+                        场地申请
+                    </div>
+                    <p class="small_hint">
+                        Application
+                    </p>
+                </div>
+                <div class="website">
+                    <div class="icon" frag="窗口899" portletmode="articlecontent" contents="{'c2':'0'}">
+                        <img src="./images/index.png" alt="">
+                    </div>
+                    <div class="large_hint" frag="窗口113" portletmode="articlecontent" contents="{'c2':'0'}">
+                        信息上报
+                    </div>
+                    <p class="small_hint">
+                        Reporting
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ouc_youth">
+        <div class="title_box">
+            <span class="title">
+                海大<span class="special">青年</span>
+            </span>
+        </div>
+        <div class="img_list" frag="窗口250" portletmode="tpl2_tbtwhp" contents="{'c2':'0'}">
+
+        </div>
+        <div class="detailed_button_box">
+            <div class="detailed_button" frag="窗口251" portletmode="simpleNews" configs="{'c28':'320','c14':'1','c1':'1','c29':'1','c39':'300','c38':'100','c21':'1','c4':'1','c6':'15','c9':'0','c12':'0','c30':'0','c37':'1','c31':'0','c16':'1','c27':'320','c15':'0','c32':'','c5':'_blank','c40':'1','c17':'0','c19':'yyyy-MM-dd','c33':'500','c2':'序号,标题,发布时间','c23':'1','c41':'240','c22':'10021','c7':'1','c13':'200','c43':'0','c24':'240','c35':'-1:-1','c3':'0','c8':'1','c44':'0','c25':'320','c34':'300','c18':'yyyy-MM-dd','c20':'0','c42':'320','c10':'50','c11':'1','c36':'0','c26':'1'}" contents="{'c2':'0'}">
+
+            </div>
+        </div>
+    </div>
+    <div id="extend_link_button">
+        <div href="" class="extend_button">
+            <img src="./images/tw.png" alt="">
+            <span frag="窗口477" portletmode="articlecontent" contents="{'c2':'0'}">
+                共青团中央
+            </span>
+        </div>
+        <div href="" class="extend_button">
+            <img src="./images/tw.png" alt="">
+            <span frag="窗口478" portletmode="articlecontent" contents="{'c2':'0'}">
+                山东共青团
+            </span>
+        </div>
+        <div href="" class="extend_button">
+            <img src="./images/xl.png" alt="">
+            <span frag="窗口479" portletmode="articlecontent" contents="{'c2':'0'}">
+                山东省学联
+            </span>
+        </div>
+        <div href="" class="extend_button">
+            <img src="./images/ouc.png" alt="">
+            <span frag="窗口480" portletmode="articlecontent" contents="{'c2':'0'}">
+                中国海洋大学
+            </span>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div class="container">
+        <div class="left">
+            <div class="top">
+                <img src="./images/bottomlogo@2x.png" alt="">
+            </div>
+        </div>
+        <div class="right">
+            <div class="info">
+                <p class="rights">
+                    © 2004-2019 共青团中国海洋大学委员会 版权所有
+                </p>
+                <p class="address">
+                    地址：青岛市崂山区松岭路238号 <span>邮编：266100</span>
+                </p>
+                <p class="connect">
+                    电话：0532-66782834 <span class="phone">0532-66782782</span> <span
+                        class="email">Email：tuanwei@ouc.edu.cn</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/bannerHandlerPlus.js"></script>
+<script src="js/navHandler.js"></script>
+<script src="js/paintedEggShellPlus.js"></script>
+</body>
+</html>
