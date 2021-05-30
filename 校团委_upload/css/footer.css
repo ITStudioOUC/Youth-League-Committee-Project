@@ -1,0 +1,72 @@
+#Footer {
+  background-image: url("../images/bottombg@2x.png");
+  background-size: cover;
+  background-position: left top;
+  background-repeat: no-repeat;
+  padding-top: 58px;
+  padding-bottom: 62px; }
+  #Footer .footer-container {
+    width: 1320px;
+    display: flex;
+    margin: 0 auto; }
+    #Footer .footer-container .left {
+      margin-right: 82px; }
+      #Footer .footer-container .left .logo {
+        width: 277px;
+        height: 71px;
+        margin-bottom: 18px; }
+        #Footer .footer-container .left .logo img {
+          width: 100%;
+          height: 100%; }
+      #Footer .footer-container .left .info p {
+        font-size: 14px;
+        font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+        font-weight: bold;
+        color: #FFFFFF;
+        line-height: 24px; }
+    #Footer .footer-container .right {
+      display: flex; }
+      #Footer .footer-container .right .link-list {
+        margin-left: 27px;
+        position: relative; }
+        #Footer .footer-container .right .link-list:after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 2px;
+          background-color: #FFFFFF;
+          top: 0;
+          left: -27px;
+          height: 100%; }
+        #Footer .footer-container .right .link-list .link-title {
+          font-size: 20px;
+          font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+          font-weight: bold;
+          color: #FFFFFF;
+          margin-bottom: 45px; }
+        #Footer .footer-container .right .link-list .link-container a {
+          font-size: 16px;
+          font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+          font-weight: 300;
+          color: #FFFFFF; }
+      #Footer .footer-container .right .qr-code-container {
+        margin-left: 399px;
+        display: flex; }
+        #Footer .footer-container .right .qr-code-container .qr-code:first-child {
+          margin-right: 28px; }
+        #Footer .footer-container .right .qr-code-container .qr-code .qr {
+          width: 107px;
+          height: 107px;
+          position: relative;
+          margin-bottom: 7px; }
+          #Footer .footer-container .right .qr-code-container .qr-code .qr img {
+            width: 100%;
+            height: 100%; }
+        #Footer .footer-container .right .qr-code-container .qr-code .name {
+          font-size: 14px;
+          font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+          font-weight: bold;
+          color: #FFFFFF;
+          text-align: center; }
+
+/*# sourceMappingURL=footer.css.map */

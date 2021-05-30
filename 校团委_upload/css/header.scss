@@ -1,0 +1,76 @@
+@import "utils";
+
+$background-color: #CD0708;
+$font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,sans-serif;// 居中使用了flex
+
+#Header {
+    background: {
+        color: $background-color;
+        image: url("../images/navbg@2x.png");
+        repeat: no-repeat;
+        size: auto 154px;
+        position-x: right;
+    };
+    padding: 22px 0 24px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    .header-icons {
+        &>div:first-child {
+            margin-right: 243px;
+        }
+        &>div:last-child {
+            margin-left: 243px;
+        }
+        .league-motto, .league-icon {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .league-icon {
+            .tw-logo, .tw-text-logo {
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .tw-logo {
+                margin-right: 19px;
+                width: 104px;
+                height: 106px;
+                position: relative;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .tw-text-logo {
+                h1 {
+                    font: {
+                        family: $font-family;
+                        weight: normal;
+                        size: 32px;
+                    }
+                    color: #fff;
+                    line-height: 30px;
+                    padding-bottom: 2px;
+                }
+                h2 {
+                    font: {
+                        family: $font-family;
+                        weight: normal;
+                        size: 18px;
+                    };
+                    line-height: 30px;
+                    color: #fff;
+                }
+            }
+        }
+        .league-motto {
+            width: 243px;
+            height: 108px;
+            position: relative;
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,94 @@
+$font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,sans-serif;
+#Footer {
+    //height: 273px;
+    background-image: url("../images/bottombg@2x.png");
+    background-size: cover;
+    background-position: left top;
+    background-repeat: no-repeat;
+    padding-top: 58px;
+    padding-bottom: 62px;
+    .footer-container {
+        width: 1320px;
+        display: flex;
+        margin: 0 auto;
+        .left {
+            margin-right: 82px;
+            .logo {
+                width: 277px;
+                height: 71px;
+                margin-bottom: 18px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .info {
+                p {
+                    font-size: 14px;
+                    font-family: $font-family;
+                    font-weight: bold;
+                    color: #FFFFFF;
+                    line-height: 24px;
+                }
+            }
+        }
+        .right {
+            display: flex;
+            .link-list {
+                margin-left: 27px;
+                position: relative;
+                &:after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 2px;
+                    background-color: #FFFFFF;
+                    top: 0;
+                    left: -27px;
+                    height: 100%;
+                }
+                .link-title {
+                    font-size: 20px;
+                    font-family: $font-family;
+                    font-weight: bold;
+                    color: #FFFFFF;
+                    margin-bottom: 45px;
+                }
+                .link-container {
+                    a {
+                        font-size: 16px;
+                        font-family: $font-family;
+                        font-weight: 300;
+                        color: #FFFFFF;
+                    }
+                }
+            }
+            .qr-code-container {
+                margin-left: 399px;
+                display: flex;
+                .qr-code {
+                    &:first-child {
+                        margin-right: 28px;
+                    }
+                    .qr {
+                        width: 107px;
+                        height: 107px;
+                        position: relative;
+                        margin-bottom: 7px;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .name {
+                        font-size: 14px;
+                        font-family: $font-family;
+                        font-weight: bold;
+                        color: #FFFFFF;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

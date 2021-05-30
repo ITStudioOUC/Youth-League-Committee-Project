@@ -1,0 +1,439 @@
+#Banner {
+  height: 500px;
+  overflow: hidden;
+  position: relative; }
+  #Banner .banner-container {
+    display: flex;
+    height: 100%;
+    width: 700%;
+    position: relative;
+    opacity: 0; }
+    #Banner .banner-container .banner-sel {
+      width: 100%;
+      height: 100%;
+      position: relative; }
+      #Banner .banner-container .banner-sel a {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: relative; }
+        #Banner .banner-container .banner-sel a img {
+          width: 100%;
+          height: 100%; }
+        #Banner .banner-container .banner-sel a h3 {
+          bottom: 0;
+          left: 50%;
+          position: absolute;
+          font-size: 32px;
+          font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+          font-weight: 400;
+          color: #fff;
+          transform: translate(-50%, -48px);
+          width: 1200px;
+          text-align: center;
+          white-space: nowrap;
+          overflow: hidden; }
+          @media screen and (min-width: 1600px) {
+            #Banner .banner-container .banner-sel a h3 {
+              text-align: right;
+              left: 0;
+              transform: translate(-190px, -48px); } }
+  #Banner .button_container {
+    position: absolute;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px; }
+  @media screen and (min-width: 1600px) {
+    #Banner .button_container {
+      position: absolute;
+      display: flex;
+      bottom: 0;
+      right: 0;
+      left: unset;
+      transform: translate(-332px, -51px); } }
+  #Banner .button_sel {
+    width: 20px;
+    height: 20px;
+    background-color: #848181;
+    transition: background-color .5s ease;
+    border-radius: 100%;
+    margin-left: 5px;
+    margin-right: 6px;
+    cursor: pointer; }
+  #Banner .selected {
+    background-color: #FFFFFF; }
+
+#Body {
+  padding-top: 41px;
+  padding-bottom: 46px;
+  background-image: linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 60%, white 100%), url("../images/bannerbg@2x.png");
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: cover; }
+  #Body .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    margin-bottom: 28px; }
+    #Body .title .panel-name {
+      color: #3C3C3C;
+      font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+      font-weight: bold;
+      line-height: 35px;
+      font-size: 36px;
+      position: relative; }
+      #Body .title .panel-name .red-font {
+        color: #CD0708; }
+      #Body .title .panel-name:after {
+        content: "";
+        display: block;
+        width: 98px;
+        height: 6px;
+        background-color: #CD0708;
+        position: absolute;
+        bottom: -28px; }
+    #Body .title .more a {
+      font-size: 18px;
+      color: #2E2E2E;
+      line-height: 17px;
+      font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+      font-weight: bold; }
+      #Body .title .more a:after {
+        content: ">"; }
+  #Body .work-display-and-notice {
+    display: flex;
+    justify-content: center; }
+    #Body .work-display-and-notice > div {
+      box-shadow: 0px 4px 20px 1px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      background-color: #fff; }
+    #Body .work-display-and-notice .work-display {
+      width: 852px;
+      height: 537px;
+      margin-right: 14px;
+      padding: 35px 33px 37px 26px;
+      box-sizing: border-box; }
+      #Body .work-display-and-notice .work-display .content {
+        padding-top: 23px;
+        display: flex; }
+        #Body .work-display-and-notice .work-display .content .left .image {
+          width: 440px;
+          height: 302px; }
+          #Body .work-display-and-notice .work-display .content .left .image img {
+            width: 100%;
+            height: 100%; }
+        #Body .work-display-and-notice .work-display .content .left .detail {
+          padding-top: 25px;
+          display: flex;
+          align-items: center; }
+          #Body .work-display-and-notice .work-display .content .left .detail .news-title {
+            margin-right: 15px;
+            width: 355px; }
+            #Body .work-display-and-notice .work-display .content .left .detail .news-title .main-title, #Body .work-display-and-notice .work-display .content .left .detail .news-title .sub-title {
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              word-break: break-all; }
+            #Body .work-display-and-notice .work-display .content .left .detail .news-title .main-title {
+              color: #3C3C3C;
+              margin-bottom: 3px;
+              font-weight: bold;
+              font-size: 18px;
+              font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif; }
+            #Body .work-display-and-notice .work-display .content .left .detail .news-title .sub-title {
+              color: #9C9C9C;
+              font-size: 14px;
+              font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif; }
+          #Body .work-display-and-notice .work-display .content .left .detail .date {
+            margin-left: 15px;
+            font-weight: bold;
+            color: #B10C0D;
+            font-size: 18px;
+            font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif; }
+        #Body .work-display-and-notice .work-display .content .right {
+          margin-left: 44px;
+          padding-top: 4px; }
+          #Body .work-display-and-notice .work-display .content .right .news-container .news-sel {
+            margin-bottom: 17px;
+            position: relative; }
+            #Body .work-display-and-notice .work-display .content .right .news-container .news-sel a {
+              display: flex;
+              align-items: center; }
+            #Body .work-display-and-notice .work-display .content .right .news-container .news-sel:after {
+              display: block;
+              content: "";
+              width: 12px;
+              height: 12px;
+              border-radius: 100%;
+              background-color: #B10C0D;
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              margin: auto 0;
+              transform: translateX(-26px); }
+            #Body .work-display-and-notice .work-display .content .right .news-container .news-sel .news-title {
+              width: 248px;
+              display: -webkit-box;
+              overflow: hidden;
+              white-space: normal;
+              text-overflow: ellipsis;
+              word-wrap: break-word;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              font-size: 18px;
+              font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+              color: #3C3C3C;
+              font-weight: bold;
+              margin-right: 13px; }
+            #Body .work-display-and-notice .work-display .content .right .news-container .news-sel .date {
+              font-size: 18px;
+              font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+              font-weight: bold;
+              color: #909090;
+              white-space: nowrap; }
+    #Body .work-display-and-notice .notice {
+      margin-left: 14px;
+      padding: 39px 26px 34px 30px;
+      width: 440px;
+      height: 537px;
+      box-sizing: border-box; }
+      #Body .work-display-and-notice .notice .notice-container {
+        padding-top: 20px; }
+        #Body .work-display-and-notice .notice .notice-container .notice-sel {
+          margin-bottom: 15px; }
+          #Body .work-display-and-notice .notice .notice-container .notice-sel:last-child {
+            margin-bottom: 0; }
+          #Body .work-display-and-notice .notice .notice-container .notice-sel a {
+            display: flex;
+            align-items: center; }
+          #Body .work-display-and-notice .notice .notice-container .notice-sel .time {
+            padding: 10px 9px 9px 10px;
+            background-color: #CD0708;
+            border-radius: 3px; }
+            #Body .work-display-and-notice .notice .notice-container .notice-sel .time .year, #Body .work-display-and-notice .notice .notice-container .notice-sel .time .month {
+              font-size: 18px;
+              font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+              font-weight: bold;
+              color: #FFFFFF;
+              white-space: nowrap;
+              text-align: center; }
+          #Body .work-display-and-notice .notice .notice-container .notice-sel .notice-title {
+            width: 305px;
+            margin-left: 12px;
+            font-size: 18px;
+            font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+            font-weight: bold;
+            color: #3C3C3C;
+            display: -webkit-box;
+            overflow: hidden;
+            white-space: normal;
+            text-overflow: ellipsis;
+            word-wrap: break-word;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            word-break: break-all; }
+  #Body .focus-front-and-utils {
+    margin-top: 37px;
+    display: flex;
+    justify-content: center; }
+    #Body .focus-front-and-utils .focus-front {
+      margin-right: 14px;
+      box-sizing: border-box;
+      padding: 41px 32px 37px 25px;
+      width: 852px;
+      height: 537px;
+      background: #FFFFFF;
+      box-shadow: 0px 4px 20px 1px rgba(0, 0, 0, 0.2);
+      border-radius: 5px; }
+      #Body .focus-front-and-utils .focus-front .focus-container {
+        padding-top: 21px;
+        padding-left: 31px; }
+        #Body .focus-front-and-utils .focus-front .focus-container .focus-sel {
+          position: relative;
+          margin-bottom: 36px; }
+          #Body .focus-front-and-utils .focus-front .focus-container .focus-sel:last-child {
+            margin-bottom: 0; }
+          #Body .focus-front-and-utils .focus-front .focus-container .focus-sel:after {
+            width: 12px;
+            height: 12px;
+            border-radius: 100%;
+            background-color: #B10C0D;
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+            transform: translateX(-30px); }
+        #Body .focus-front-and-utils .focus-front .focus-container a {
+          display: flex;
+          align-items: center; }
+        #Body .focus-front-and-utils .focus-front .focus-container .focus-title {
+          width: 689px; }
+          #Body .focus-front-and-utils .focus-front .focus-container .focus-title .main-title {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            word-break: break-all;
+            color: #3C3C3C;
+            font-size: 18px;
+            font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+            font-weight: bold; }
+          #Body .focus-front-and-utils .focus-front .focus-container .focus-title .sub-title {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            word-break: break-all;
+            color: #9C9C9C;
+            font-size: 14px;
+            font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+            font-weight: normal; }
+        #Body .focus-front-and-utils .focus-front .focus-container .date {
+          margin-left: 20px; }
+          #Body .focus-front-and-utils .focus-front .focus-container .date .month, #Body .focus-front-and-utils .focus-front .focus-container .date .year {
+            white-space: nowrap;
+            text-align: center;
+            font-size: 18px;
+            font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+            font-weight: bold;
+            color: #909090; }
+    #Body .focus-front-and-utils .utils {
+      width: 440px;
+      box-sizing: border-box;
+      margin-left: 14px; }
+      #Body .focus-front-and-utils .utils .main-utils {
+        height: 370px;
+        box-sizing: border-box;
+        padding: 30px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 20px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        display: flex;
+        flex-flow: row wrap;
+        align-content: flex-start; }
+        #Body .focus-front-and-utils .utils .main-utils .main-util {
+          width: 80px;
+          margin-right: 66px;
+          margin-bottom: 52px; }
+          #Body .focus-front-and-utils .utils .main-utils .main-util:nth-child(4), #Body .focus-front-and-utils .utils .main-utils .main-util:nth-child(5), #Body .focus-front-and-utils .utils .main-utils .main-util:nth-child(6) {
+            margin-bottom: 0; }
+          #Body .focus-front-and-utils .utils .main-utils .main-util:nth-child(3), #Body .focus-front-and-utils .utils .main-utils .main-util:nth-child(6) {
+            margin-right: 0; }
+          #Body .focus-front-and-utils .utils .main-utils .main-util .img {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+            background-color: #CD0708;
+            margin-bottom: 14px; }
+          #Body .focus-front-and-utils .utils .main-utils .main-util .name {
+            width: 80px;
+            text-align: center;
+            font-size: 18px;
+            font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+            font-weight: bold;
+            color: #595959;
+            margin: 0 auto; }
+          #Body .focus-front-and-utils .utils .main-utils .main-util:first-child .name {
+            width: 90px;
+            margin-left: -5px; }
+      #Body .focus-front-and-utils .utils .other-utils {
+        padding-top: 30px;
+        display: flex;
+        justify-content: center; }
+        #Body .focus-front-and-utils .utils .other-utils .other-util {
+          margin-right: 63px; }
+          #Body .focus-front-and-utils .utils .other-utils .other-util:last-child {
+            margin-right: 0; }
+          #Body .focus-front-and-utils .utils .other-utils .other-util .img {
+            width: 82px;
+            height: 82px;
+            border: 2px solid #5C5C5C;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 13px; }
+          #Body .focus-front-and-utils .utils .other-utils .other-util .name {
+            font-size: 18px;
+            font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+            font-weight: bold;
+            text-align: center;
+            color: #595959; }
+
+#Youth .title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 27px; }
+  #Youth .title .panel-name {
+    color: #3C3C3C;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+    font-weight: bold;
+    line-height: 35px;
+    font-size: 36px;
+    position: relative; }
+    #Youth .title .panel-name .red-font {
+      color: #CD0708; }
+    #Youth .title .panel-name:after {
+      content: "";
+      display: block;
+      width: 67px;
+      height: 6px;
+      background-color: #CD0708;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -27px;
+      margin: 0 auto; }
+#Youth .youth-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1320px;
+  margin: 0 auto;
+  padding-top: 31px; }
+  #Youth .youth-list .youth-sel {
+    margin-right: 35px;
+    margin-bottom: 38px; }
+    #Youth .youth-list .youth-sel:nth-child(3), #Youth .youth-list .youth-sel:nth-child(6) {
+      margin-right: 0; }
+    #Youth .youth-list .youth-sel .img {
+      width: 416px;
+      height: 277px;
+      border-radius: 5px;
+      overflow: hidden; }
+      #Youth .youth-list .youth-sel .img img {
+        width: 100%;
+        height: 100%; }
+    #Youth .youth-list .youth-sel .name {
+      width: 388px;
+      padding: 17px 0 0 7px;
+      display: -webkit-box;
+      overflow: hidden;
+      white-space: normal;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      font-size: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+      font-weight: bold;
+      color: #3A3A3A; }
+#Youth .more {
+  margin-top: 17px;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: center; }
+  #Youth .more a {
+    padding: 15px 25px 16px 26px;
+    background-color: #CD0708;
+    font-size: 18px;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+    font-weight: 500;
+    color: #FFFFFF;
+    border-radius: 25px; }
+
+/*# sourceMappingURL=body.css.map */

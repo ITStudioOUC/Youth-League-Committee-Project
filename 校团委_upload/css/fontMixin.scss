@@ -1,0 +1,93 @@
+@mixin defaultFont($color, $size, $weight, $family, $lineHeight) {
+  color: $color;
+  font: {
+    size: $size;
+    weight: $weight;
+    family: $family;
+  };
+  line-height: $lineHeight;
+}
+
+@mixin navigatorFont {
+  @include defaultFont(#FFFFFF, 16px, 400, '', 16px);
+}
+
+@mixin bannerMessageFont {
+  @include defaultFont(#FFFFFF, 24px, 400, '', 23px);
+}
+
+@mixin statusPanelFont {
+  @include defaultFont(#3C3C3C, 36px, 500, '', 35px);
+}
+
+@mixin moreFont {
+  @include defaultFont(#2E2E2E, 18px, 500, '', 12px);
+}
+
+@mixin timeFont {
+  @include defaultFont(#FFFFFF, 18px, bold, '', 16px);
+}
+
+@mixin contentFont {
+  @include defaultFont(#3C3C3C, 18px, bold, '', 19px);
+}
+
+@mixin baseTitleFont {
+  @include defaultFont(#222222, 18px, 500, '', 18px);
+}
+
+@mixin baseTimeFont {
+  @include defaultFont(#9E9E9E, 14px, 500, '', 12px);
+}
+
+@mixin buttonFont {
+  @include defaultFont(#FFFFFF, 18px, 500, '', 18px);
+}
+
+@mixin iconFont {
+  @include defaultFont(#FFFFFF, 16px, bold, '', 16px);
+}
+
+@mixin infoFont {
+  @include defaultFont(#FFFFFF, 14px, bold, '', 24px);
+}
+
+@mixin largeHint {
+  @include defaultFont(#CD0708, 18px, lighter, '', 24px);
+}
+
+@mixin smallHint {
+  @include defaultFont(#3C3C3C, 18px, lighter, '', 24px);
+}
+
+@mixin oucYouth {
+  @include defaultFont(#3C3C3C, 36px, normal, '', 35px);
+}
+
+@mixin coverFont {
+  @include defaultFont(#FFFFFF, 20px, normal, '', 30px);
+}
+
+@mixin totalFont {
+  @include defaultFont(#C0C0C0, 18px, 400, '', 17px);
+}
+
+@mixin titleFont {
+  @include defaultFont(#3C3C3C, 18px, normal, '', 18px);
+}
+
+@mixin information {
+  @include defaultFont(#9C9C9C, 14px, normal, '', 14px);
+}
+
+@mixin childTitle {
+  @include defaultFont(#000000, 24px, normal, '', 24px);
+}
+
+@mixin articleShort {
+  @include defaultFont(#000000, 16px, normal, '', 16px);
+}
+
+@mixin articleContent {
+  @include defaultFont(#000000, 14px, normal, '', 20px);
+}

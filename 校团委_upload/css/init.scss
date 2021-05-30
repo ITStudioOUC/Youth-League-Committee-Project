@@ -1,0 +1,33 @@
+* {
+    outline: none;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    min-width: 1366px;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+li, ol {
+    list-style-type: none;
+}
+
+img {
+    border: 0;
+}
+
+button {
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+input{
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}

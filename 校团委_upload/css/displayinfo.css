@@ -1,0 +1,88 @@
+#banner {
+  background: url("../images/hero.png");
+  height: 282px; }
+
+#body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 70px 0 98px;
+  background: url("../images/bannerbg@2x.png") no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+  #body #article {
+    background: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.2);
+    width: 1139px;
+    padding: 62px 85px 62px 77px;
+    box-sizing: border-box; }
+    #body #article #main_title_box {
+      margin-bottom: 112px;
+      position: relative; }
+      #body #article #main_title_box:after {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 71px;
+        height: 5px;
+        background: #CD0708;
+        border-radius: 2px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        bottom: -50px; }
+      #body #article #main_title_box #title_box {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 18px; }
+        #body #article #main_title_box #title_box span {
+          color: #3C3C3C;
+          font-size: 18px;
+          font-weight: normal;
+          font-family: "";
+          line-height: 18px; }
+      #body #article #main_title_box #information_box {
+        display: flex;
+        justify-content: center; }
+        #body #article #main_title_box #information_box span {
+          margin-right: 10px;
+          color: #9C9C9C;
+          font-size: 14px;
+          font-weight: normal;
+          font-family: "";
+          line-height: 14px; }
+          #body #article #main_title_box #information_box span:last-child {
+            margin-right: 0; }
+    #body #article #article_content_box #article_title, #body #article #article_content_box #article_short {
+      text-align: center; }
+    #body #article #article_content_box #article_title {
+      margin-bottom: 20px;
+      color: #000000;
+      font-size: 24px;
+      font-weight: normal;
+      font-family: "";
+      line-height: 24px; }
+    #body #article #article_content_box #article_short {
+      color: #000000;
+      font-size: 16px;
+      font-weight: normal;
+      font-family: "";
+      line-height: 16px;
+      margin-bottom: 15px; }
+    #body #article #article_content_box #article_content img {
+      width: 639px;
+      height: 426px;
+      margin: 0 auto 35px;
+      display: block; }
+    #body #article #article_content_box #article_content p {
+      margin-bottom: 35px;
+      color: #000000;
+      font-size: 14px;
+      font-weight: normal;
+      font-family: "";
+      line-height: 20px; }
+      #body #article #article_content_box #article_content p:last-child {
+        margin-bottom: 0; }
+
+/*# sourceMappingURL=displayinfo.css.map */

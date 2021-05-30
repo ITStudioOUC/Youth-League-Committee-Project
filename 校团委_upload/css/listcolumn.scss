@@ -1,0 +1,300 @@
+@import "./fontMixin";
+@import "./utils";
+
+$banner_item_height: 500px;
+$banner_item_number: 7;
+$banner_item_width: 1745px;
+
+@mixin container {
+    padding: 74px 0 66px;
+    .container_name {
+        text-align: center;
+        margin-bottom: 85px;
+        @include statusPanelFont;
+        position: relative;
+        &:after {
+            display: block;
+            position: absolute;
+            content: '';
+            width: 67px;
+            height: 6px;
+            left:0;
+            right: 0;
+            top: 61px;
+            margin: 0 auto;
+            background: #CD0708;
+        }
+        span {
+            color: #CD0708;
+        }
+    }
+}
+
+@mixin contentContainer {
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+}
+
+@mixin moreButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 71px;
+    a {
+        background: #CD0708;
+        padding: 15px 25px 16px 27px;
+        border-radius: 25px;
+        @include buttonFont;
+    }
+}
+
+.page_button {
+    background: #CD0708;
+    width: 41px;
+    height: 41px;
+    border-radius: 100%;
+    margin-right: 22px;
+    position: relative;
+    &:last-child {
+        margin-right: 0;
+    }
+    .pre_pre, .pre, .next, .next_next {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 10px;
+        height: 10px;
+    }
+    .pre, .pre_pre, .next, .next_next {
+        border-top: 2px solid #FFFFFF;
+        border-left: 2px solid #FFFFFF;
+        transform: rotate(-45deg);
+    }
+    .pre_pre, .next_next {
+        &:after {
+            margin: 4px;
+            position: absolute;
+            border-top: 2px solid #FFFFFF;
+            border-left: 2px solid #FFFFFF;
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+        }
+    }
+    .pre_pre {
+        left: -5px;
+    }
+    .next {
+        transform: rotate(135deg);
+    }
+    .next_next {
+        transform: rotate(135deg);
+        left: 5px;
+    }
+}
+.none {
+    background: #D68383;
+}
+
+#banner {
+    background: url("../images/hero.png");
+    height: 282px;
+}
+
+#body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 70px 0 98px;
+    background: url("../images/bannerbg@2x.png") no-repeat;
+    background-size: cover;
+    .left_list {
+        margin-right: 40px;
+        width: 210px;
+        box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.2);
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        .title {
+            height: 112px;
+            background: #CD0708;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            span {
+                @include bannerMessageFont;
+                line-height: 24px;
+            }
+        }
+        .child_selection {
+            display: flex;
+            justify-content: center;
+            padding: 40px 0;
+            background: #FFFFFF;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            ul {
+                li {
+                    margin-bottom: 20px;
+                    a {
+                        @include bannerMessageFont;
+                        color: #6F6F6F;
+                    }
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+                .selected {
+                    a {
+                        color: #CD0708;
+                        position: relative;
+                        &:after {
+                            position: absolute;
+                            content: '';
+                            display: block;
+                            width: 8px;
+                            height: 28px;
+                            background: #CD0708;
+                            border-radius: 2px;
+                            left: -20px;
+                            top: 3px;
+                            bottom: 0;
+                            margin: auto 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .right_list {
+        background: #FFFFFF;
+        box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        padding: 27px 0 24px 0;
+        min-width: 893px;
+        ul {
+            padding: 0 94px 0 26px;
+            margin-bottom: 35px;
+            li {
+                margin-bottom: 20px;
+                .time, .content_container {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                .time {
+                    background: #CD0708;
+                    padding: 22px 10px 23px 9px;
+                    border-radius: 3px;
+                    @include timeFont;
+                    width: 72px;
+                    box-sizing: border-box;
+                }
+                .content_container {
+                    a {
+                        display: block;
+                        max-width: 690px;
+                        margin-left: 6px;
+                        @include overFlowOneLine;
+                        .content {
+                            @include contentFont;
+                        }
+                    }
+                    .child_content {
+                        span {
+                            font-size: 14px;
+                            color: #9C9C9C;
+                        }
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .page_panel {
+            padding: 0 46px 0 26px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .total {
+                @include totalFont;
+            }
+            .page_button_box {
+                display: flex;
+                justify-content: center;
+                vertical-align: center;
+                .page_button {
+                    background: #CD0708;
+                    width: 41px;
+                    height: 41px;
+                    border-radius: 100%;
+                    margin-right: 22px;
+                    position: relative;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                    .pre_pre, .pre, .next, .next_next {
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                        width: 10px;
+                        height: 10px;
+                    }
+                    .pre, .pre_pre, .next, .next_next {
+                        border-top: 2px solid #FFFFFF;
+                        border-left: 2px solid #FFFFFF;
+                        transform: rotate(-45deg);
+                    }
+                    .pre_pre, .next_next {
+                        &:after {
+                            margin: 4px;
+                            position: absolute;
+                            border-top: 2px solid #FFFFFF;
+                            border-left: 2px solid #FFFFFF;
+                            content: '';
+                            display: block;
+                            width: 10px;
+                            height: 10px;
+                        }
+                    }
+                    .pre_pre {
+                        left: -5px;
+                    }
+                    .next {
+                        transform: rotate(135deg);
+                    }
+                    .next_next {
+                        transform: rotate(135deg);
+                        left: 5px;
+                    }
+                }
+                .none {
+                    background: #D68383;
+                }
+            }
+            .jump_panel {
+                span {
+                    @include totalFont;
+                }
+                input {
+                    height: 36px;
+                    width: 39px;
+                    border: 2px solid #C5CFD8;
+                    border-radius: 10px;
+                    padding-left: 5px;
+                    box-sizing: border-box;
+                    @include totalFont;
+                    color: #2E2E2E;
+                }
+            }
+        }
+    }
+}

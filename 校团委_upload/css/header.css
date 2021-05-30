@@ -1,0 +1,50 @@
+#Header {
+  background-color: #CD0708;
+  background-image: url("../images/navbg@2x.png");
+  background-repeat: no-repeat;
+  background-size: auto 154px;
+  background-position-x: right;
+  padding: 22px 0 24px 0;
+  position: relative;
+  display: flex;
+  justify-content: center; }
+  #Header .header-icons > div:first-child {
+    margin-right: 243px; }
+  #Header .header-icons > div:last-child {
+    margin-left: 243px; }
+  #Header .header-icons .league-motto, #Header .header-icons .league-icon {
+    display: inline-block;
+    vertical-align: middle; }
+  #Header .header-icons .league-icon .tw-logo, #Header .header-icons .league-icon .tw-text-logo {
+    display: inline-block;
+    vertical-align: middle; }
+  #Header .header-icons .league-icon .tw-logo {
+    margin-right: 19px;
+    width: 104px;
+    height: 106px;
+    position: relative; }
+    #Header .header-icons .league-icon .tw-logo img {
+      width: 100%;
+      height: 100%; }
+  #Header .header-icons .league-icon .tw-text-logo h1 {
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+    font-weight: normal;
+    font-size: 32px;
+    color: #fff;
+    line-height: 30px;
+    padding-bottom: 2px; }
+  #Header .header-icons .league-icon .tw-text-logo h2 {
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 30px;
+    color: #fff; }
+  #Header .header-icons .league-motto {
+    width: 243px;
+    height: 108px;
+    position: relative; }
+    #Header .header-icons .league-motto img {
+      height: 100%;
+      width: 100%; }
+
+/*# sourceMappingURL=header.css.map */

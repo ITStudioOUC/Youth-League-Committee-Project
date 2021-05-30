@@ -1,0 +1,152 @@
+@import "./fontMixin";
+
+$banner_item_height: 500px;
+$banner_item_number: 7;
+$banner_item_width: 1745px;
+
+@mixin container {
+    padding: 74px 0 66px;
+    .container_name {
+        text-align: center;
+        margin-bottom: 85px;
+        @include statusPanelFont;
+        position: relative;
+
+        &:after {
+            display: block;
+            position: absolute;
+            content: '';
+            width: 67px;
+            height: 6px;
+            left: 0;
+            right: 0;
+            top: 61px;
+            margin: 0 auto;
+            background: #CD0708;
+        }
+
+        span {
+            color: #CD0708;
+        }
+    }
+}
+
+@mixin contentContainer {
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+}
+
+@mixin moreButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 71px;
+    a {
+        background: #CD0708;
+        padding: 15px 25px 16px 27px;
+        border-radius: 25px;
+        @include buttonFont;
+    }
+}
+
+#banner {
+    background: url("../images/hero.png");
+    height: 282px;
+}
+
+#body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 70px 0 98px;
+    background: url("../images/bannerbg@2x.png") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    #article {
+        background: #FFFFFF;
+        border-radius: 5px;
+        box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.2);
+        width: 1139px;
+        padding: 62px 85px 62px 77px;
+        box-sizing: border-box;
+
+        #main_title_box {
+            margin-bottom: 112px;
+            position: relative;
+
+            &:after {
+                position: absolute;
+                content: '';
+                display: block;
+                width: 71px;
+                height: 5px;
+                background: #CD0708;
+                border-radius: 2px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                bottom: -50px;
+            }
+
+            #title_box {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 18px;
+
+                span {
+                    @include titleFont;
+                }
+            }
+
+            #information_box {
+                display: flex;
+                justify-content: center;
+
+                span {
+                    margin-right: 10px;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    @include information;
+                }
+            }
+        }
+
+        #article_content_box {
+            #article_title, #article_short {
+                text-align: center;
+            }
+
+            #article_title {
+                margin-bottom: 20px;
+                @include childTitle;
+            }
+
+            #article_short {
+                @include articleShort;
+                margin-bottom: 15px;
+            }
+
+            #article_content {
+                img {
+                    width: 639px;
+                    height: 426px;
+                    margin: 0 auto 35px;
+                    display: block;
+                }
+
+                p {
+                    margin-bottom: 35px;
+                    @include articleContent;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
