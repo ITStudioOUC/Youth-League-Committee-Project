@@ -1,0 +1,26 @@
+<style>
+    /*针对搜索框的样式*/
+    .search-container form {
+        display: flex;
+        justify-content: center;
+    }
+
+    .search-container .search {
+        position: absolute;
+        width: 100% !important;
+        height: 100% !important;
+        left: 0 !important;
+        top: 0 !important;
+        padding: 0 !important;
+        z-index: 10 !important;
+        cursor: pointer;
+    }
+</style>
+
+<form method="post" action="搜索地址" target="_blank">
+    <input type="text" id="search-web" placeholder="搜索" name="keyword" class="keyword"/>
+    <button id="submit-search">
+        <img src="/_upload/tpl/08/73/2163/template2163/images/sousuo@2x.png" alt="">
+        <input class="search" type="submit" value=""/>
+    </button>
+</form>

@@ -7,13 +7,110 @@
     <link rel="stylesheet" href="./css/navigator.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/displayinfo.css">
+    <link rel="stylesheet" href="./css/loading.css">
+    <script src="js/polyfill.min.js"></script>
+    <script src="js/babel.min.js"></script>
     <title>displayinfo</title>
+<style>
+#Footer .footer-container .right .link-list {
+margin-left: 13px !important;
+}
+</style>
+
+    <style>
+        /*针对搜索框的样式*/
+        .search-container form {
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-container .search {
+            position: absolute;
+            width: 100% !important;
+            height: 100% !important;
+            left: 0 !important;
+            top: 0 !important;
+            padding: 0 !important;
+            z-index: 10 !important;
+            cursor: pointer;
+        }
+    </style>
+<style>
+#Footer .link-container a {
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+    font-weight: 300;
+    color: #FFFFFF;
+}
+</style>
+<style>
+#Navigator .nav-container .nav-sel .temp {
+color: #393939;
+transition: color .3s ease;
+}
+#Navigator .nav-container > div:nth-child(2):hover .temp, #Navigator .nav-container > div:nth-child(3):hover .temp, #Navigator .nav-container > div:nth-child(7):hover .temp {
+    color: #fff;
+}
+</style>
+<style>
+.league-icon>a {
+cursor: default;
+}
+</style>
+    <style>
+        .message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 200%);
+        }
+    </style>
+<style>
+.message {
+transform: translate(-50%, 300%);
+opacity: 0;
+}
+</style>
 </head>
 <body>
+<div class="cover-container">
+    <div class="cover"></div>
+    <div class="preloader loading">
+        <span class="slice"></span>
+        <span class="slice"></span>
+        <span class="slice"></span>
+        <span class="slice"></span>
+        <span class="slice"></span>
+        <span class="slice"></span>
+    </div>
+    <span class="message">如长时间无法正常打开，请使用新版 Edge 浏览器、Chrome 浏览器或 Firefox 浏览器并检查网络连接</span>
+<script>
+window.onload = function() {
+    function isIE() { //ie?  
+        if (!!window.ActiveXObject || "ActiveXObject" in window) { return true; }
+        else { return false; }
+    }
+    if (isIE()) {
+        setTimeout(function () {
+            try {
+                document.getElementsByClassName("message")[0].style.opacity = 1;
+            } catch (e) { 
+                console.log(e);
+            }
+        }, 1000);
+    } else {
+        document.getElementsByClassName("cover-container")[0].remove();
+    }
+}
+</script>
+</div>
+<script>
+
+</script>
 <div id="Header">
     <div class="header-icons">
         <div class="league-icon">
-            <a href="./">
+            <a href="javascript:void(0)">
                 <div class="tw-logo">
                     <img src="images/tw.png" alt="">
                 </div>
@@ -34,120 +131,113 @@
 </div>
 
 <nav id="Navigator">
-    <ul class="nav-container">
-        <li class="nav-sel">
-            <a href="./"><span>首页</span></a>
-        </li>
-        <li class="nav-sel">
-            <a href="./"><span>团委概况</span>
-            </a>
-            <ul class="sub-nav-container">
-                <li class="nav-sel sub-nav-sel"><a href="./"><span>团委介绍</span></a></li>
-                <li class="nav-sel sub-nav-sel"><a href="./"><span>岗位设置</span></a></li>
-                <li class="nav-sel sub-nav-sel"><a href="./"><span>工作人员</span></a></li>
-            </ul>
-        </li>
-        <li class="nav-sel">
-            <a href="./"><span>思想引领</span></a>
-            <ul class="sub-nav-container">
-                <li class="nav-sel sub-nav-sel"><a href="./"><span>主题教育</span></a></li>
-                <li class="nav-sel sub-nav-sel"><a href="./"><span>青马工程</span></a></li>
-            </ul>
-        </li>
-        <li class="nav-sel">
-            <a href="./"><span>社会实践</span></a>
-        </li>
-        <li class="nav-sel">
-            <a href="./"><span>创新创业</span></a>
-        </li>
-        <li class="nav-sel">
-            <a href="./"><span>校园文化</span></a>
-        </li>
-        <li class="nav-sel">
-            <a href="./"><span>规章制度</span></a>
-            <ul class="sub-nav-container">
-                <li class="nav-sel sub-nav-sel"><a href="./"><span>上级文件</span></a></li>
-                <li class="nav-sel sub-nav-sel"><a href="./"><span>团委文件</span></a></li>
-            </ul>
-        </li>
-        <li class="nav-sel">
-            <a href="./"><span>学生社团</span></a>
-        </li>
-        <li class="nav-sel">
-            <a href="./"><span>学生组织</span></a>
-        </li>
-        <li class="search-container">
-            <button id="submit-search">
-                <img src="images/搜索@2x.png" alt="">
-            </button>
-            <label for="search-web" style="display: none"></label>
-            <input type="text" id="search-web" placeholder="搜索">
-        </li>
-    </ul>
+    <div class="nav-container">
+        <div class="nav-sel single-sel">
+            <div class="temp" frag="窗口99">首页</div>
+        </div>
+        <div class="nav-sel multi-sel">
+            <div class="temp">团委概况</div>
+            <div class="sub-nav-container">
+                <div class="nav-sel sub-nav-sel">
+                    <div class="temp" frag="窗口12">团委介绍</div>
+                </div>
+                <div class="nav-sel sub-nav-sel">
+                    <div class="temp" frag="窗口13">岗位设置</div>
+                </div>
+                <div class="nav-sel sub-nav-sel">
+                    <div class="temp" frag="窗口14">工作人员</div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-sel multi-sel">
+            <div class="temp">思想引领</div>
+            <div class="sub-nav-container">
+                <div class="nav-sel sub-nav-sel">
+                    <div class="temp" frag="窗口15">主题教育</div>
+                </div>
+                <div class="nav-sel sub-nav-sel">
+                    <div class="temp" frag="窗口16">青马工程</div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-sel single-sel">
+            <div class="temp" frag="窗口17">社会实践</div>
+        </div>
+        <div class="nav-sel single-sel">
+            <div class="temp" frag="窗口18">创新创业</div>
+        </div>
+        <div class="nav-sel single-sel">
+            <div class="temp" frag="窗口19">校园文化</div>
+        </div>
+        <div class="nav-sel multi-sel">
+            <div class="temp">规章制度</div>
+            <div class="sub-nav-container">
+                <div class="nav-sel sub-nav-sel">
+                    <div class="temp" frag="窗口20">上级文件</div>
+                </div>
+                <div class="nav-sel sub-nav-sel">
+                    <div class="temp" frag="窗口21">团委文件</div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-sel single-sel">
+            <div class="temp" frag="窗口22">学生社团</div>
+        </div>
+        <div class="nav-sel single-sel">
+            <div class="temp" frag="窗口23">学生组织</div>
+        </div>
+        <div class="search-container">
+            <div class="temp" frag="窗口84"> </div>
+        </div>
+    </div>
 </nav>
+
 <div id="banner">
 
 </div>
 <div id="body">
     <div id="article">
         <div id="main_title_box">
-            <div id="title_box">
+            <div id="title_box" frag="窗口1000">
                 <span>
                     【小青马】第75期学生骨干培训班特别主题团日活动顺利进行
                 </span>
             </div>
             <div id="information_box">
-                <span>
+                <span frag="窗口1001">
                     2019-04-26
                 </span>
-                <span>
-                    作者：NeWive
+                <span>作者：</span>
+                <span frag="窗口1003">
+                    NeWive
                 </span>
                 <span>
-                    发布人：NeWive
+                 发布人：
+                </span>
+                <span frag="窗口1004">
+                    NeWive
                 </span>
                 <span>
-                    浏览次数：2333333
+                  浏览次数：
+                </span>
+                <span frag="窗口1005">
+                    2333333
                 </span>
             </div>
         </div>
         <div id="article_content_box">
             <div id="article_title">
-                <span>
+                <div frag="窗口1077">
                     青春心向党，建工新时代
-                </span>
+                </div>
             </div>
-            <div id="article_short">
+            <div id="article_short" frag="窗口1099">
                 <span>
                     ——第75期学生骨干培训班特别主题团日活动顺利进行
                 </span>
             </div>
-            <div id="article_content">
-                <img src="./images/4.jpg" alt="">
-                <p>
-                    为让学员们铭记革命先烈的丰功伟绩，不忘先辈在战场上抛头颅，洒热血的奉献，进而培养学员们的爱国主义精神，4月25日下午，学校第75期学生骨干培训班赴崂山烈士陵园纪念馆，开展以“青春心向党，建功新时代”为主题的团日活动。 本次活动邀请了马克思主义学院中国近现代史教研部主任王绪杰老师作为团课讲授人，由班长金健夫主持。 凛冽的山风无法阻挡学员们学习和深思的热情，大家庄严地站立在革命烈士纪念碑前，神情肃穆。 仪式第一项，齐唱国歌。“起来！起来！起来！”唱出了学员心中的激情，余音不止。仪式第二项，全体人员向革命烈士默哀一分钟，庄严肃穆。仪式第三项，王老师讲授了以“传承五四精神，承担民族复兴”为主题的团课，切身讲出他对五四运动的理解，深入人心。仪式第四项，学员代表房子琪、王毅翔、张狄桉朗诵诗歌《可爱的中国》，其中饱含的深情令人动容。仪式第五项，重温入团誓词，学员们在纪念碑前庄严宣誓。仪式的结尾，《光荣啊，中国共青团》团歌再次萦绕在广场上空。
-                </p>
-                <p>
-                    为让学员们铭记革命先烈的丰功伟绩，不忘先辈在战场上抛头颅，洒热血的奉献，进而培养学员们的爱国主义精神，4月25日下午，学校第75期学生骨干培训班赴崂山烈士陵园纪念馆，开展以“青春心向党，建功新时代”为主题的团日活动。 本次活动邀请了马克思主义学院中国近现代史教研部主任王绪杰老师作为团课讲授人，由班长金健夫主持。 凛冽的山风无法阻挡学员们学习和深思的热情，大家庄严地站立在革命烈士纪念碑前，神情肃穆。 仪式第一项，齐唱国歌。“起来！起来！起来！”唱出了学员心中的激情，余音不止。仪式第二项，全体人员向革命烈士默哀一分钟，庄严肃穆。仪式第三项，王老师讲授了以“传承五四精神，承担民族复兴”为主题的团课，切身讲出他对五四运动的理解，深入人心。仪式第四项，学员代表房子琪、王毅翔、张狄桉朗诵诗歌《可爱的中国》，其中饱含的深情令人动容。仪式第五项，重温入团誓词，学员们在纪念碑前庄严宣誓。仪式的结尾，《光荣啊，中国共青团》团歌再次萦绕在广场上空。
-                </p>
-                <p>
-                    为让学员们铭记革命先烈的丰功伟绩，不忘先辈在战场上抛头颅，洒热血的奉献，进而培养学员们的爱国主义精神，4月25日下午，学校第75期学生骨干培训班赴崂山烈士陵园纪念馆，开展以“青春心向党，建功新时代”为主题的团日活动。 本次活动邀请了马克思主义学院中国近现代史教研部主任王绪杰老师作为团课讲授人，由班长金健夫主持。 凛冽的山风无法阻挡学员们学习和深思的热情，大家庄严地站立在革命烈士纪念碑前，神情肃穆。 仪式第一项，齐唱国歌。“起来！起来！起来！”唱出了学员心中的激情，余音不止。仪式第二项，全体人员向革命烈士默哀一分钟，庄严肃穆。仪式第三项，王老师讲授了以“传承五四精神，承担民族复兴”为主题的团课，切身讲出他对五四运动的理解，深入人心。仪式第四项，学员代表房子琪、王毅翔、张狄桉朗诵诗歌《可爱的中国》，其中饱含的深情令人动容。仪式第五项，重温入团誓词，学员们在纪念碑前庄严宣誓。仪式的结尾，《光荣啊，中国共青团》团歌再次萦绕在广场上空。
-                </p>
-                <p>
-                    为让学员们铭记革命先烈的丰功伟绩，不忘先辈在战场上抛头颅，洒热血的奉献，进而培养学员们的爱国主义精神，4月25日下午，学校第75期学生骨干培训班赴崂山烈士陵园纪念馆，开展以“青春心向党，建功新时代”为主题的团日活动。 本次活动邀请了马克思主义学院中国近现代史教研部主任王绪杰老师作为团课讲授人，由班长金健夫主持。 凛冽的山风无法阻挡学员们学习和深思的热情，大家庄严地站立在革命烈士纪念碑前，神情肃穆。 仪式第一项，齐唱国歌。“起来！起来！起来！”唱出了学员心中的激情，余音不止。仪式第二项，全体人员向革命烈士默哀一分钟，庄严肃穆。仪式第三项，王老师讲授了以“传承五四精神，承担民族复兴”为主题的团课，切身讲出他对五四运动的理解，深入人心。仪式第四项，学员代表房子琪、王毅翔、张狄桉朗诵诗歌《可爱的中国》，其中饱含的深情令人动容。仪式第五项，重温入团誓词，学员们在纪念碑前庄严宣誓。仪式的结尾，《光荣啊，中国共青团》团歌再次萦绕在广场上空。
-                </p>
-                <p>
-                    为让学员们铭记革命先烈的丰功伟绩，不忘先辈在战场上抛头颅，洒热血的奉献，进而培养学员们的爱国主义精神，4月25日下午，学校第75期学生骨干培训班赴崂山烈士陵园纪念馆，开展以“青春心向党，建功新时代”为主题的团日活动。 本次活动邀请了马克思主义学院中国近现代史教研部主任王绪杰老师作为团课讲授人，由班长金健夫主持。 凛冽的山风无法阻挡学员们学习和深思的热情，大家庄严地站立在革命烈士纪念碑前，神情肃穆。 仪式第一项，齐唱国歌。“起来！起来！起来！”唱出了学员心中的激情，余音不止。仪式第二项，全体人员向革命烈士默哀一分钟，庄严肃穆。仪式第三项，王老师讲授了以“传承五四精神，承担民族复兴”为主题的团课，切身讲出他对五四运动的理解，深入人心。仪式第四项，学员代表房子琪、王毅翔、张狄桉朗诵诗歌《可爱的中国》，其中饱含的深情令人动容。仪式第五项，重温入团誓词，学员们在纪念碑前庄严宣誓。仪式的结尾，《光荣啊，中国共青团》团歌再次萦绕在广场上空。
-                </p>
-                <p>
-                    为让学员们铭记革命先烈的丰功伟绩，不忘先辈在战场上抛头颅，洒热血的奉献，进而培养学员们的爱国主义精神，4月25日下午，学校第75期学生骨干培训班赴崂山烈士陵园纪念馆，开展以“青春心向党，建功新时代”为主题的团日活动。 本次活动邀请了马克思主义学院中国近现代史教研部主任王绪杰老师作为团课讲授人，由班长金健夫主持。 凛冽的山风无法阻挡学员们学习和深思的热情，大家庄严地站立在革命烈士纪念碑前，神情肃穆。 仪式第一项，齐唱国歌。“起来！起来！起来！”唱出了学员心中的激情，余音不止。仪式第二项，全体人员向革命烈士默哀一分钟，庄严肃穆。仪式第三项，王老师讲授了以“传承五四精神，承担民族复兴”为主题的团课，切身讲出他对五四运动的理解，深入人心。仪式第四项，学员代表房子琪、王毅翔、张狄桉朗诵诗歌《可爱的中国》，其中饱含的深情令人动容。仪式第五项，重温入团誓词，学员们在纪念碑前庄严宣誓。仪式的结尾，《光荣啊，中国共青团》团歌再次萦绕在广场上空。
-                </p>
-                <p>
-                    为让学员们铭记革命先烈的丰功伟绩，不忘先辈在战场上抛头颅，洒热血的奉献，进而培养学员们的爱国主义精神，4月25日下午，学校第75期学生骨干培训班赴崂山烈士陵园纪念馆，开展以“青春心向党，建功新时代”为主题的团日活动。 本次活动邀请了马克思主义学院中国近现代史教研部主任王绪杰老师作为团课讲授人，由班长金健夫主持。 凛冽的山风无法阻挡学员们学习和深思的热情，大家庄严地站立在革命烈士纪念碑前，神情肃穆。 仪式第一项，齐唱国歌。“起来！起来！起来！”唱出了学员心中的激情，余音不止。仪式第二项，全体人员向革命烈士默哀一分钟，庄严肃穆。仪式第三项，王老师讲授了以“传承五四精神，承担民族复兴”为主题的团课，切身讲出他对五四运动的理解，深入人心。仪式第四项，学员代表房子琪、王毅翔、张狄桉朗诵诗歌《可爱的中国》，其中饱含的深情令人动容。仪式第五项，重温入团誓词，学员们在纪念碑前庄严宣誓。仪式的结尾，《光荣啊，中国共青团》团歌再次萦绕在广场上空。
-                </p>
-                <p>
-                    为让学员们铭记革命先烈的丰功伟绩，不忘先辈在战场上抛头颅，洒热血的奉献，进而培养学员们的爱国主义精神，4月25日下午，学校第75期学生骨干培训班赴崂山烈士陵园纪念馆，开展以“青春心向党，建功新时代”为主题的团日活动。 本次活动邀请了马克思主义学院中国近现代史教研部主任王绪杰老师作为团课讲授人，由班长金健夫主持。 凛冽的山风无法阻挡学员们学习和深思的热情，大家庄严地站立在革命烈士纪念碑前，神情肃穆。 仪式第一项，齐唱国歌。“起来！起来！起来！”唱出了学员心中的激情，余音不止。仪式第二项，全体人员向革命烈士默哀一分钟，庄严肃穆。仪式第三项，王老师讲授了以“传承五四精神，承担民族复兴”为主题的团课，切身讲出他对五四运动的理解，深入人心。仪式第四项，学员代表房子琪、王毅翔、张狄桉朗诵诗歌《可爱的中国》，其中饱含的深情令人动容。仪式第五项，重温入团誓词，学员们在纪念碑前庄严宣誓。仪式的结尾，《光荣啊，中国共青团》团歌再次萦绕在广场上空。
-                </p>
+            <div id="article_content" frag="窗口1055">
+
             </div>
         </div>
     </div>
@@ -183,20 +273,20 @@
                 <div class="link-title">
                     友情链接
                 </div>
-                <ul class="link-container">
-                    <li class="link">
-                        <a href="">共青团中央</a>
-                    </li>
-                    <li>
-                        <a href="">山东共青团</a>
-                    </li>
-                    <li>
-                        <a href="">山东省学联</a>
-                    </li>
-                    <li>
-                        <a href="">中国海洋大学</a>
-                    </li>
-                </ul>
+                <div class="link-container">
+                    <div frag="窗口400">
+                        共青团中央
+                    </div>
+                    <div frag="窗口401">
+                        山东共青团
+                    </div>
+                    <div frag="窗口402">
+                        山东省学联
+                    </div>
+                    <div frag="窗口404">
+                        中国海洋大学
+                    </div>
+                </div>
             </div>
             <div class="qr-code-container">
                 <div class="qr-code">
@@ -220,5 +310,37 @@
     </div>
 </div>
 </body>
+<script>
+function createElement(tagName, attr) {
+    let tag = document.createElement(tagName);
+    Object.assign(tag, attr);
+    return tag;
+}
 
+function setAttr(target, arr) {
+    try {
+        Object.assign(target.style, arr)
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+function initFooterNav() {
+    let list = [...document.querySelectorAll("#Footer .link-container>div")];
+    let container = document.querySelector("#Footer .link-container");
+    list.forEach(i => {
+        let navContainer = createElement("div", {
+            className: "link"
+        });
+        let nav = i.querySelector(".Article_Title a").cloneNode(true);
+        navContainer.appendChild(nav);
+        container.appendChild(navContainer);
+        setAttr(i, {
+            display: "none"
+        });
+    });
+}
+initFooterNav();
+</script>
+<script src="js/itStudio.js"></script>
 </html>

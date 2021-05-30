@@ -8,13 +8,152 @@
     <link rel="stylesheet" href="css/navigator.css">
     <link rel="stylesheet" href="css/body.css">
     <link rel="stylesheet" href="css/footer.css">
-    <script src="extends/polyfill.min.js"></script>
+    <link rel="stylesheet" href="css/loading.css">
+    <script src="js/polyfill.min.js"></script>
+    <script src="js/babel.min.js"></script>
+    <style>
+        html, body {
+            position: relative;
+            height: 100%;
+        }
+.league-icon>a { cursor: default; }
+    </style>
+    <style>
+        /*针对搜索框的样式*/
+        .search-container form {
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-container .search {
+            position: absolute;
+            width: 100% !important;
+            height: 100% !important;
+            left: 0 !important;
+            top: 0 !important;
+            padding: 0 !important;
+            z-index: 10 !important;
+            cursor: pointer;
+        }
+    </style>
+    <style>
+        /*针对Banner的样式调整*/
+        .Banner .banner-container .banner-sel {
+            overflow: hidden;
+        }
+    </style>
+    <style>
+        .message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 200%);
+        }
+    </style>
+    <style>
+        #Banner .banner-container a::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            background-image: linear-gradient(to top, #000000 0%, rgba(255, 255, 255, 0) 20%);
+            background-position: bottom;
+            background-size: cover;
+        }
+        #Banner h3 {
+            z-index: 10;
+        }
+    </style>
+<style>
+#Youth .title {
+padding-top: 45px;
+}
+#Footer .link-container a {
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+    font-weight: 300;
+    color: #FFFFFF;
+}
+
+</style>
+<style>
+#Navigator .nav-container .nav-sel .temp {
+color: #393939;
+transition: color .3s ease;
+}
+#Navigator .nav-container > div:nth-child(2):hover .temp, #Navigator .nav-container > div:nth-child(3):hover .temp, #Navigator .nav-container > div:nth-child(7):hover .temp {
+    color: #fff;
+}
+</style>
+<style>
+    #Youth .Article_Index {
+        display: none;
+    }
+    .wp_article_list .list_item {
+        border-bottom: none;
+    }
+</style>
+<style>
+    #Youth .Article_Index {
+        display: none;
+    }
+    .wp_article_list .list_item {
+        border-bottom: none;
+    }
+    #Youth .youth-sel {
+        position: relative;
+    }
+    #Youth .youth-sel>a {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<style>
+.message {
+transform: translate(-50%, 300%);
+opacity: 0;
+}
+</style>
+<style>
+.news-title, .notice-title, .youth-list .name, .focus-title .main-title {
+font-weight: normal !important;
+}
+</style>
+<style>
+#Footer .footer-container .right .link-list {
+margin-left: 13px !important;
+}
+</style>
+
 </head>
 <body>
+<div class="cover-container">
+    <div class="cover"></div>
+    <div class="preloader loading">
+        <span class="slice"></span>
+        <span class="slice"></span>
+        <span class="slice"></span>
+        <span class="slice"></span>
+        <span class="slice"></span>
+        <span class="slice"></span>
+    </div>
+    <span class="message">如长时间无法正常打开，请使用新版 Edge 浏览器、Chrome 浏览器或 Firefox 浏览器并检查网络连接</span>
+<script>
+setTimeout(function () {
+try {
+document.getElementsByClassName("message")[0].style.opacity = 1;
+} catch(e) {}
+}, 7000);
+</script>
+</div>
 <div id="Header">
     <div class="header-icons">
         <div class="league-icon">
-            <a href="./">
+            <a href="javascript:void(0)">
                 <div class="tw-logo">
                     <img src="images/tw.png" alt="">
                 </div>
@@ -35,128 +174,88 @@
 </div>
 
 <nav id="Navigator">
-    <ul class="nav-container">
-        <li class="nav-sel">
-            <a href="./"><span>首页</span></a>
-        </li>
-        <li class="nav-sel">
-            <a href="./"><span>团委概况</span>
-            </a>
-            <ul class="sub-nav-container">
-                <li class="nav-sel sub-nav-sel"><a href="./"><span>团委介绍</span></a></li>
-                <li class="nav-sel sub-nav-sel"><a href="./"><span>岗位设置</span></a></li>
-                <li class="nav-sel sub-nav-sel"><a href="./"><span>工作人员</span></a></li>
-            </ul>
-        </li>
-        <li class="nav-sel">
-            <a href="./"><span>思想引领</span></a>
-            <ul class="sub-nav-container">
-                <li class="nav-sel sub-nav-sel"><a href="./"><span>主题教育</span></a></li>
-                <li class="nav-sel sub-nav-sel"><a href="./"><span>青马工程</span></a></li>
-            </ul>
-        </li>
-        <li class="nav-sel">
-            <a href="./"><span>社会实践</span></a>
-        </li>
-        <li class="nav-sel">
-            <a href="./"><span>创新创业</span></a>
-        </li>
-        <li class="nav-sel">
-            <a href="./"><span>校园文化</span></a>
-        </li>
-        <li class="nav-sel">
-            <a href="./"><span>规章制度</span></a>
-            <ul class="sub-nav-container">
-                <li class="nav-sel sub-nav-sel"><a href="./"><span>上级文件</span></a></li>
-                <li class="nav-sel sub-nav-sel"><a href="./"><span>团委文件</span></a></li>
-            </ul>
-        </li>
-        <li class="nav-sel">
-            <a href="./"><span>学生社团</span></a>
-        </li>
-        <li class="nav-sel">
-            <a href="./"><span>学生组织</span></a>
-        </li>
-        <li class="search-container">
-            <button id="submit-search">
-                <img src="images/sousuo@2x.png" alt="">
-            </button>
-            <label for="search-web" style="display: none"></label>
-            <input type="text" id="search-web" placeholder="搜索">
-        </li>
-    </ul>
+    <div class="nav-container">
+        <div class="nav-sel single-sel">
+            <div class="temp" frag="窗口01">首页</div>
+        </div>
+        <div class="nav-sel multi-sel">
+            <div class="temp">团委概况</div>
+            <div class="sub-nav-container">
+                <div class="nav-sel sub-nav-sel">
+                    <div class="temp" frag="窗口02">团委介绍</div>
+                </div>
+                <div class="nav-sel sub-nav-sel">
+                    <div class="temp" frag="窗口03">岗位设置</div>
+                </div>
+                <div class="nav-sel sub-nav-sel">
+                    <div class="temp" frag="窗口04">工作人员</div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-sel multi-sel">
+            <div class="temp">思想引领</div>
+            <div class="sub-nav-container">
+                <div class="nav-sel sub-nav-sel">
+                    <div class="temp" frag="窗口05">主题教育</div>
+                </div>
+                <div class="nav-sel sub-nav-sel">
+                    <div class="temp" frag="窗口06">青马工程</div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-sel single-sel">
+            <div class="temp" frag="窗口07">社会实践</div>
+        </div>
+        <div class="nav-sel single-sel">
+            <div class="temp" frag="窗口08">创新创业</div>
+        </div>
+        <div class="nav-sel single-sel">
+            <div class="temp" frag="窗口09">校园文化</div>
+        </div>
+        <div class="nav-sel multi-sel">
+            <div class="temp">规章制度</div>
+            <div class="sub-nav-container">
+                <div class="nav-sel sub-nav-sel">
+                    <div class="temp" frag="窗口10">上级文件</div>
+                </div>
+                <div class="nav-sel sub-nav-sel">
+                    <div class="temp" frag="窗口11">团委文件</div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-sel single-sel">
+            <div class="temp" frag="窗口12">学生社团</div>
+        </div>
+        <div class="nav-sel single-sel">
+            <div class="temp" frag="窗口13">学生会组织</div>
+        </div>
+        <div class="search-container">
+            <div class="temp" frag="窗口14">
+
+            </div>
+        </div>
+    </div>
 </nav>
 
-<div id="Banner">
-    <ul class="banner-container">
-        <li class="banner-sel">
-            <a href="./">
-                <img src="images/test/5.jpg" alt="">
-                <h3>
-                    毕生情•海大梦 中国海洋大学举行2019届毕业晚会5
-                </h3>
-            </a>
-        </li>
-        <li class="banner-sel">
-            <a href="./">
-                <img src="images/test/1.jpg" alt="">
-                <h3>
-                    毕生情•海大梦 中国海洋大学举行2019届毕业晚会1
-                </h3>
-            </a>
-        </li>
-        <li class="banner-sel">
-            <a href="./">
-                <img src="images/test/2.png" alt="">
-                <h3>
-                    毕生情•海大梦 中国海洋大学举行2019届毕业晚会2
-                </h3>
-            </a>
-        </li>
-        <li class="banner-sel">
-            <a href="./">
-                <img src="images/test/3.jpg" alt="">
-                <h3>
-                    毕生情•海大梦 中国海洋大学举行2019届毕业晚会3
-                </h3>
-            </a>
-        </li>
-        <li class="banner-sel">
-            <a href="./">
-                <img src="images/test/4.jpg" alt="">
-                <h3>
-                    毕生情•海大梦 中国海洋大学举行2019届毕业晚会4
-                </h3>
-            </a>
-        </li>
-        <li class="banner-sel">
-            <a href="./">
-                <img src="images/test/5.jpg" alt="">
-                <h3>
-                    毕生情•海大梦 中国海洋大学举行2019届毕业晚会5
-                </h3>
-            </a>
-        </li>
-        <li class="banner-sel">
-            <a href="./">
-                <img src="images/test/1.jpg" alt="">
-                <h3>
-                    毕生情•海大梦 中国海洋大学举行2019届毕业晚会1
-                </h3>
-            </a>
-        </li>
-    </ul>
-    <ul class="button_container">
-        <li class="button_sel selected"></li>
-        <li class="button_sel"></li>
-        <li class="button_sel"></li>
-        <li class="button_sel"></li>
-        <li class="button_sel"></li>
-    </ul>
+<div id="Banner" class="Banner" frag="窗口15">
+
 </div>
+<script>
+document.querySelectorAll(".banner-sel img").forEach(i => {
+    let src = i.src.split(".");
+    let temp = src[src.length - 2];
+    if (/_s$/.test(temp)) {
+        temp = temp.replace(/_s$/, "");
+        src[src.length - 2] = temp;
+        i.src = src.join(".");
+    }
+});
+
+</script>
+
 
 <div id="Body">
-<!--    通知和工作动态类-->
+    <!--    通知和工作动态类-->
     <div class="work-display-and-notice">
         <div class="work-display">
             <div class="title">
@@ -164,129 +263,15 @@
                     工作<span class="red-font">动态</span>
                 </div>
                 <div class="more">
-                    <a href="./">
-                        更多
-                    </a>
+
                 </div>
             </div>
             <div class="content">
-                <div class="left">
-                    <div class="image">
-                        <a href="">
-                            <img src="./images/test/3.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="detail">
-                        <div class="news-title">
-                            <a href="">
-                                <div class="main-title">
-                                    毕生情•海大梦 中国海洋大学中国海洋11231312
-                                </div>
-                                <div class="sub-title">
-                                    这是内文引用这是内文引用这是内文文引用这文这6663213123
-                                </div>
-                            </a>
-                        </div>
-                        <div class="date">
-                            <span>
-                                06-24
-                            </span>
-                        </div>
-                    </div>
+                <div class="left" frag="窗口16">
+
                 </div>
-                <div class="right">
-                    <ul class="news-container">
-                        <li class="news-sel">
-                            <a href="">
-                                <div class="news-title">
-                                    毕生情•海大梦 中国海洋大学
-                                    AABBCDDEEFFGGHHIIJJK
-                                    毕生情•海大梦 中国海洋大学
-                                    AABBCDDEEFFGGHHIIJJK
-                                </div>
-                                <div class="date">
-                                    <span>
-                                        06-24
-                                    </span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="news-sel">
-                            <a href="">
-                                <div class="news-title">
-                                    毕生情•海大梦 中国海洋大学
-                                    AABBCDDEEFFGGHHIIJJK
-                                    毕生情•海大梦 中国海洋大学
-                                    AABBCDDEEFFGGHHIIJJK
-                                </div>
-                                <div class="date">
-                                    <span>
-                                        06-24
-                                    </span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="news-sel">
-                            <a href="">
-                                <div class="news-title">
-                                    毕生情•海大梦 中国海洋大学
-                                    AABBCDDEEFFGGHHIIJJK
-                                    毕生情•海大梦 中国海洋大学
-                                    AABBCDDEEFFGGHHIIJJK
-                                </div>
-                                <div class="date">
-                                    <span>
-                                        06-24
-                                    </span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="news-sel">
-                            <a href="">
-                                <div class="news-title">
-                                    毕生情•海大梦 中国海洋大学
-                                    AABBCDDEEFFGGHHIIJJK
-                                    毕生情•海大梦 中国海洋大学
-                                    AABBCDDEEFFGGHHIIJJK
-                                </div>
-                                <div class="date">
-                                    <span>
-                                        06-24
-                                    </span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="news-sel">
-                            <a href="">
-                                <div class="news-title">
-                                    毕生情•海大梦 中国海洋大学
-                                    AABBCDDEEFFGGHHIIJJK
-                                    毕生情•海大梦 中国海洋大学
-                                    AABBCDDEEFFGGHHIIJJK
-                                </div>
-                                <div class="date">
-                                    <span>
-                                        06-24
-                                    </span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="news-sel">
-                            <a href="">
-                                <div class="news-title">
-                                    毕生情•海大梦 中国海洋大学
-                                    AABBCDDEEFFGGHHIIJJK
-                                    毕生情•海大梦 中国海洋大学
-                                    AABBCDDEEFFGGHHIIJJK
-                                </div>
-                                <div class="date">
-                                    <span>
-                                        06-24
-                                    </span>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
+                <div class="right" frag="窗口17">
+
                 </div>
             </div>
         </div>
@@ -296,412 +281,147 @@
                     公告<span class="red-font">通知</span>
                 </div>
                 <div class="more">
-                    <a href="./">
-                        更多
-                    </a>
+
                 </div>
             </div>
-            <ul class="notice-container">
-               <li class="notice-sel">
-                   <a href="">
-                       <div class="time">
-                           <div class="month">
-                               06-24
-                           </div>
-                           <div class="year">
-                               2020
-                           </div>
-                       </div>
-                       <div class="notice-title">
-                           <span>
-                               毕生情•海大梦 中国海洋大学AABBCCDDEEFFGGHHIIJJKKLLMMNNOOP毕生情•海大梦 中国海洋大学AABBCCDDEEFFGGHHIIJJKKLLMMNNOOP
-                           </span>
-                       </div>
-                   </a>
-               </li>
-                <li class="notice-sel">
-                    <a href="">
-                        <div class="time">
-                            <div class="month">
-                                06-24
-                            </div>
-                            <div class="year">
-                                2020
-                            </div>
-                        </div>
-                        <div class="notice-title">
-                           <span>
-                               毕生情•海大梦 中国海洋大学AABBCCDDEEFFGGHHIIJJKKLLMMNNOOP毕生情•海大梦 中国海洋大学AABBCCDDEEFFGGHHIIJJKKLLMMNNOOP
-                           </span>
-                        </div>
-                    </a>
-                </li>
-                <li class="notice-sel">
-                    <a href="">
-                        <div class="time">
-                            <div class="month">
-                                06-24
-                            </div>
-                            <div class="year">
-                                2020
-                            </div>
-                        </div>
-                        <div class="notice-title">
-                           <span>
-                               毕生情•海大梦 中国海洋大学AABBCCDDEEFFGGHHIIJJKKLLMMNNOOP毕生情•海大梦 中国海洋大学AABBCCDDEEFFGGHHIIJJKKLLMMNNOOP
-                           </span>
-                        </div>
-                    </a>
-                </li>
-                <li class="notice-sel">
-                    <a href="">
-                        <div class="time">
-                            <div class="month">
-                                06-24
-                            </div>
-                            <div class="year">
-                                2020
-                            </div>
-                        </div>
-                        <div class="notice-title">
-                           <span>
-                               毕生情•海大梦 中国海洋大学AABBCCDDEEFFGGHHIIJJKKLLMMNNOOP毕生情•海大梦 中国海洋大学AABBCCDDEEFFGGHHIIJJKKLLMMNNOOP
-                           </span>
-                        </div>
-                    </a>
-                </li>
-                <li class="notice-sel">
-                    <a href="">
-                        <div class="time">
-                            <div class="month">
-                                06-24
-                            </div>
-                            <div class="year">
-                                2020
-                            </div>
-                        </div>
-                        <div class="notice-title">
-                           <span>
-                               毕生情•海大梦 中国海洋大学AABBCCDDEEFFGGHHIIJJKKLLMMNNOOP毕生情•海大梦 中国海洋大学AABBCCDDEEFFGGHHIIJJKKLLMMNNOOP
-                           </span>
-                        </div>
-                    </a>
-                </li>
-            </ul>
+            <div class="notice-container" frag="窗口18">
+
+            </div>
         </div>
     </div>
     <div class="focus-front-and-utils">
-        <div class="focus-front">
-            <div class="title">
-                <div class="panel-name">
-                    聚焦<span class="red-font">一线</span>
+        <div class="focus-front-and-utils">
+            <div class="focus-front">
+                <div class="title">
+                    <div class="panel-name">
+                        聚焦<span class="red-font">一线</span>
+                    </div>
+                    <div class="more">
+
+                    </div>
                 </div>
-                <div class="more">
-                    <a href="./">
-                        更多
-                    </a>
-                </div>
+                <div class="focus-container" frag="窗口19"></div>
             </div>
-            <ul class="focus-container">
-                 <li class="focus-sel">
-                     <a href="">
-                         <div class="focus-title">
-                             <div class="main-title">
-                                 毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF
-                             </div>
-                             <div class="sub-title">
-                                 这是内文引用这是内文引用这是内文文引用这文引用这XFSDGADFRGHJRTJRTJRSJSRJRSRJRJRJRTFBSV这是内文引用这是内文引用这是内文文引用这文引用这XFSDGADFRGHJRTJRTJRSJSRJRSRJRJRJRTFBSV这是内文引用这是内文引用这是内文文引用这文引用这XFSDGADFRGHJRTJRTJRSJSRJRSRJRJRJRTFBSV这是内文引用这是内文引用这是内文文引用这文引用这XFSDGADFRGHJRTJRTJRSJSRJRSRJRJRJRTFBSV毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF
-                             </div>
-                         </div>
-                         <div class="date">
-                             <div class="month">
-                                 06-24
-                             </div>
-                             <div class="year">
-                                 2020
-                             </div>
-                         </div>
-                     </a>
-                 </li>
-                <li class="focus-sel">
-                    <a href="">
-                        <div class="focus-title">
-                            <div class="main-title">
-                                毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF
+            <div class="utils">
+                <div class="main-utils">
+                    <div class="main-util">
+                        <a href="">
+                            <div class="img">
+                                <img src="./images/xuexi@2x.png" alt="" width="46px">
                             </div>
-                            <div class="sub-title">
-                                这是内文引用这是内文引用这是内文文引用这文引用这XFSDGADFRGHJRTJRTJRSJSRJRSRJRJRJRTFBSV这是内文引用这是内文引用这是内文文引用这文引用这XFSDGADFRGHJRTJRTJRSJSRJRSRJRJRJRTFBSV这是内文引用这是内文引用这是内文文引用这文引用这XFSDGADFRGHJRTJRTJRSJSRJRSRJRJRJRTFBSV这是内文引用这是内文引用这是内文文引用这文引用这XFSDGADFRGHJRTJRTJRSJSRJRSRJRJRJRTFBSV毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF
+                            <div class="name">
+                                青年大学习
                             </div>
-                        </div>
-                        <div class="date">
-                            <div class="month">
-                                06-24
+                        </a>
+                        <div frag="窗口200"></div>
+                    </div>
+                    <div class="main-util">
+                        <a href="">
+                            <div class="img">
+                                <img src="./images/gongchandang@2x.png" alt="" width="42px">
                             </div>
-                            <div class="year">
-                                2020
+                            <div class="name">
+                                学党史
                             </div>
-                        </div>
-                    </a>
-                </li>
-                <li class="focus-sel">
-                    <a href="">
-                        <div class="focus-title">
-                            <div class="main-title">
-                                毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF
+                        </a>
+                        <div frag="窗口201"></div>
+                    </div>
+                    <div class="main-util">
+                        <a href="">
+                            <div class="img">
+                                <img src="./images/niao02@2x.png" alt="" width="38px">
                             </div>
-                            <div class="sub-title">
-                                这是内文引用这是内文引用这是内文文引用这文引用这XFSDGADFRGHJRTJRTJRSJSRJRSRJRJRJRTFBSV这是内文引用这是内文引用这是内文文引用这文引用这XFSDGADFRGHJRTJRTJRSJSRJRSRJRJRJRTFBSV这是内文引用这是内文引用这是内文文引用这文引用这XFSDGADFRGHJRTJRTJRSJSRJRSRJRJRJRTFBSV这是内文引用这是内文引用这是内文文引用这文引用这XFSDGADFRGHJRTJRTJRSJSRJRSRJRJRJRTFBSV毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF
+                            <div class="name">
+                                青鸟计划
                             </div>
-                        </div>
-                        <div class="date">
-                            <div class="month">
-                                06-24
+                        </a>
+                        <div frag="窗口202"></div>
+                    </div>
+                    <div class="main-util">
+                        <a href="">
+                            <div class="img">
+                                <img src="./images/jia@2x.png" alt="" width="44px">
                             </div>
-                            <div class="year">
-                                2020
+                            <div class="name">
+                                希望小屋
                             </div>
-                        </div>
-                    </a>
-                </li>
-                <li class="focus-sel">
-                    <a href="">
-                        <div class="focus-title">
-                            <div class="main-title">
-                                毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF
+                        </a>
+                        <div frag="窗口203"></div>
+                    </div>
+                    <div class="main-util">
+                        <a href="">
+                            <div class="img">
+                                <img src="./images/fanchuan@2x.png" alt="" width="47px">
                             </div>
-                            <div class="sub-title">
-                                这是内文引用这是内文引用这是内文文引用这文引用这XFSDGADFRGHJRTJRTJRSJSRJRSRJRJRJRTFBSV这是内文引用这是内文引用这是内文文引用这文引用这XFSDGADFRGHJRTJRTJRSJSRJRSRJRJRJRTFBSV这是内文引用这是内文引用这是内文文引用这文引用这XFSDGADFRGHJRTJRTJRSJSRJRSRJRJRJRTFBSV这是内文引用这是内文引用这是内文文引用这文引用这XFSDGADFRGHJRTJRTJRSJSRJRSRJRJRJRTFBSV毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF
+                            <div class="name">
+                                团建领航计划
                             </div>
-                        </div>
-                        <div class="date">
-                            <div class="month">
-                                06-24
+                        </a>
+                        <div frag="窗口204"></div>
+                    </div>
+                    <div class="main-util">
+                        <a href="">
+                            <div class="img">
+                                <img src="./images/chengjidan@2x.png" alt="" width="40px" style="margin-left: 5px;">
                             </div>
-                            <div class="year">
-                                2020
+                            <div class="name">
+                                第二课堂成绩单
                             </div>
-                        </div>
-                    </a>
-                </li>
-                <li class="focus-sel">
-                    <a href="">
-                        <div class="focus-title">
-                            <div class="main-title">
-                                毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF
-                            </div>
-                            <div class="sub-title">
-                                这是内文引用这是内文引用这是内文文引用这文引用这XFSDGADFRGHJRTJRTJRSJSRJRSRJRJRJRTFBSV这是内文引用这是内文引用这是内文文引用这文引用这XFSDGADFRGHJRTJRTJRSJSRJRSRJRJRJRTFBSV这是内文引用这是内文引用这是内文文引用这文引用这XFSDGADFRGHJRTJRTJRSJSRJRSRJRJRJRTFBSV这是内文引用这是内文引用这是内文文引用这文引用这XFSDGADFRGHJRTJRTJRSJSRJRSRJRJRJRTFBSV毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF毕生情•海大梦 中国海洋大学AABBCCCCDEEEFFFGGHHIJJKKLLTTTGBNMZFBZFF
-                            </div>
-                        </div>
-                        <div class="date">
-                            <div class="month">
-                                06-24
-                            </div>
-                            <div class="year">
-                                2020
-                            </div>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="utils">
-            <div class="main-utils">
-                <div class="main-util">
-                    <a href="">
-                        <div class="img">
-                            <img src="./images/xuexi@2x.png" alt="" width="46px">
-                        </div>
-                        <div class="name">
-                            青年大学习
-                        </div>
-                    </a>
+                        </a>
+                        <div frag="窗口205"></div>
+                    </div>
                 </div>
-                <div class="main-util">
-                    <a href="">
-                        <div class="img">
-                            <img src="./images/gongchandang@2x.png" alt="" width="42px">
-                        </div>
-                        <div class="name">
-                            学党史
-                        </div>
-                    </a>
-                </div>
-                <div class="main-util">
-                    <a href="">
-                        <div class="img">
-                            <img src="./images/niao02@2x.png" alt="" width="38px">
-                        </div>
-                        <div class="name">
-                            青鸟计划
-                        </div>
-                    </a>
-                </div>
-                <div class="main-util">
-                    <a href="">
-                        <div class="img">
-                            <img src="./images/jia@2x.png" alt="" width="44px">
-                        </div>
-                        <div class="name">
-                            希望小屋
-                        </div>
-                    </a>
-                </div>
-                <div class="main-util">
-                    <a href="">
-                        <div class="img">
-                            <img src="./images/fanchuan@2x.png" alt="" width="47px">
-                        </div>
-                        <div class="name">
-                            团建领航计划
-                        </div>
-                    </a>
-                </div>
-                <div class="main-util">
-                    <a href="">
-                        <div class="img">
-                            <img src="./images/chengjidan@2x.png" alt="" width="40px" style="margin-left: 5px;">
-                        </div>
-                        <div class="name">
-                            第二课堂成绩单
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="other-utils">
-                <div class="other-util">
-                    <a href="">
-                        <div class="img">
-                            <img src="./images/xiazai@2x.png" alt="" width="42px">
-                        </div>
-                        <div class="name">
-                            常用下载
-                        </div>
-                    </a>
-                </div>
-                <div class="other-util">
-                    <a href="">
-                        <div class="img">
-                            <img src="./images/shenqing@2x.png" alt="" width="36px">
-                        </div>
-                        <div class="name">
-                            场地申请
-                        </div>
-                    </a>
-                </div>
-                <div class="other-util">
-                    <a href="">
-                        <div class="img">
-                            <img src="./images/bi@2x.png" alt="" width="40px">
-                        </div>
-                        <div class="name">
-                            信息上报
-                        </div>
-                    </a>
+                <div class="other-utils">
+                    <div class="other-util">
+                        <a href="">
+                            <div class="img">
+                                <img src="./images/xiazai@2x.png" alt="" width="42px">
+                            </div>
+                            <div class="name">
+                                常用下载
+                            </div>
+                        </a>
+                        <div frag="窗口206"></div>
+                    </div>
+                    <div class="other-util">
+                        <a href="">
+                            <div class="img">
+                                <img src="./images/shenqing@2x.png" alt="" width="36px">
+                            </div>
+                            <div class="name">
+                                场地申请
+                            </div>
+                        </a>
+                        <div frag="窗口207"></div>
+                    </div>
+                    <div class="other-util">
+                        <a href="">
+                            <div class="img">
+                                <img src="./images/bi@2x.png" alt="" width="40px">
+                            </div>
+                            <div class="name">
+                                信息上报
+                            </div>
+                        </a>
+                        <div frag="窗口208"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div id="Youth">
-    <div class="title">
-        <div class="panel-name">
-            海大<span class="red-font">青年</span>
+    <div id="Youth">
+        <div class="title">
+            <div class="panel-name">
+                海大<span class="red-font">青年</span>
+            </div>
+        </div>
+        <div class="youth-list" frag="窗口20"></div>
+        <div class="more" frag="窗口1000">
+
         </div>
     </div>
-    <ul class="youth-list">
-        <li class="youth-sel">
-            <a href="">
-                <div class="img">
-                    <img src="./images/test/3.jpg" alt="">
-                </div>
-                <div class="name">
-                    产教融合 学以致用 中国海洋大学第十一届商
-                    业实训大赛举行产教融合 学以致用 中国海洋大学第十一届商
-                    业实训大赛举行产教融合 学以致用 中国海洋大学第十一届商
-                    业实训大赛举行产教融合 学以致用 中国海洋大学第十一届商
-                    业实训大赛举行
-                </div>
-            </a>
-        </li>
-        <li class="youth-sel">
-            <a href="">
-                <div class="img">
-                    <img src="./images/test/3.jpg" alt="">
-                </div>
-                <div class="name">
-                    产教融合 学以致用 中国海洋大学第十一届商
-                    业实训大赛举行产教融合 学以致用 中国海洋大学第十一届商
-                    业实训大赛举行产教融合 学以致用 中国海洋大学第十一届商
-                    业实训大赛举行产教融合 学以致用 中国海洋大学第十一届商
-                    业实训大赛举行
-                </div>
-            </a>
-        </li>
-        <li class="youth-sel">
-            <a href="">
-                <div class="img">
-                    <img src="./images/test/3.jpg" alt="">
-                </div>
-                <div class="name">
-                    产教融合 学以致用 中国海洋大学第十一届商
-                    业实训大赛举行产教融合 学以致用 中国海洋大学第十一届商
-                    业实训大赛举行产教融合 学以致用 中国海洋大学第十一届商
-                    业实训大赛举行产教融合 学以致用 中国海洋大学第十一届商
-                    业实训大赛举行
-                </div>
-            </a>
-        </li>
-        <li class="youth-sel">
-            <a href="">
-                <div class="img">
-                    <img src="./images/test/3.jpg" alt="">
-                </div>
-                <div class="name">
-                    产教融合 学以致用 中国海洋大学第十一届商
-                    业实训大赛举行产教融合 学以致用 中国海洋大学第十一届商
-                    业实训大赛举行产教融合 学以致用 中国海洋大学第十一届商
-                    业实训大赛举行产教融合 学以致用 中国海洋大学第十一届商
-                    业实训大赛举行
-                </div>
-            </a>
-        </li>
-        <li class="youth-sel">
-            <a href="">
-                <div class="img">
-                    <img src="./images/test/3.jpg" alt="">
-                </div>
-                <div class="name">
-                    产教融合 学以致用 中国海洋大学第十一届商
-                    业实训大赛举行产教融合 学以致用 中国海洋大学第十一届商
-                    业实训大赛举行产教融合 学以致用 中国海洋大学第十一届商
-                    业实训大赛举行产教融合 学以致用 中国海洋大学第十一届商
-                    业实训大赛举行
-                </div>
-            </a>
-        </li>
-        <li class="youth-sel">
-            <a href="">
-                <div class="img">
-                    <img src="./images/test/3.jpg" alt="">
-                </div>
-                <div class="name">
-                    产教融合 学以致用 中国海洋大学第十一届商
-                    业实训大赛举行产教融合 学以致用 中国海洋大学第十一届商
-                    业实训大赛举行产教融合 学以致用 中国海洋大学第十一届商
-                    业实训大赛举行产教融合 学以致用 中国海洋大学第十一届商
-                    业实训大赛举行
-                </div>
-            </a>
-        </li>
-    </ul>
-    <div class="more">
-        <a href="">
-            查看更多
-        </a>
-    </div>
-</div>
 
 <div id="Footer">
     <div class="footer-container">
@@ -714,7 +434,7 @@
                     © 共青团中国海洋大学委员会 版权所有
                 </p>
                 <p>
-                    地址：青岛市崂山区松岭路238号   邮编：266100
+                    地址：青岛市崂山区松岭路238号 邮编：266100
                 </p>
                 <p>
                     <span>
@@ -734,20 +454,20 @@
                 <div class="link-title">
                     友情链接
                 </div>
-                <ul class="link-container">
-                    <li class="link">
-                        <a href="">共青团中央</a>
-                    </li>
-                    <li>
-                        <a href="">山东共青团</a>
-                    </li>
-                    <li>
-                        <a href="">山东省学联</a>
-                    </li>
-                    <li>
-                        <a href="">中国海洋大学</a>
-                    </li>
-                </ul>
+                <div class="link-container">
+                    <div frag="窗口400">
+                        共青团中央
+                    </div>
+                    <div frag="窗口401">
+                        山东共青团
+                    </div>
+                    <div frag="窗口402">
+                        山东省学联
+                    </div>
+                    <div frag="窗口404">
+                        中国海洋大学
+                    </div>
+                </div>
             </div>
             <div class="qr-code-container">
                 <div class="qr-code">
@@ -771,5 +491,7 @@
     </div>
 </div>
 </body>
-<script src="js/index.js"></script>
+<!--   -->
+<script src="js/main.js"></script>
+<script src="js/itStudio.js"></script>
 </html>

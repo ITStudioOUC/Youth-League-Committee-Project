@@ -7,13 +7,258 @@
     <link rel="stylesheet" href="./css/navigator.css">
     <link rel="stylesheet" href="./css/listColumn.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/loading.css">
+    <script src="js/polyfill.min.js"></script>
+    <script src="js/babel.min.js"></script>
     <title>listColumn</title>
+<style>
+#Footer .footer-container .right .link-list {
+margin-left: 13px !important;
+}
+</style>
+
+    <style>
+        /*针对搜索框的样式*/
+        .search-container form {
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-container .search {
+            position: absolute;
+            width: 100% !important;
+            height: 100% !important;
+            left: 0 !important;
+            top: 0 !important;
+            padding: 0 !important;
+            z-index: 10 !important;
+            cursor: pointer;
+        }
+    </style>
+    <style>
+        #body .right_list ul li .time {
+            padding: 12px 10px 14px 9px !important;
+        }
+
+        #body .right_list ul li .time .year, #body .right_list ul li .time .month {
+            font-size: 18px;
+            font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+            font-weight: bold;
+            color: #FFFFFF;
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        #body .right_list ul li .time .year {
+            margin-top: 10px;
+        }
+
+    </style>
+    <style>
+        .wp_paging {
+            width: 100%;
+            padding: 0 46px 0 26px !important;
+            margin-bottom: 0 !important;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .wp_paging:after {
+            display: none;
+        }
+
+        .wp_paging:before {
+            display: none;
+        }
+
+        .wp_paging li {
+            margin: 0 !important;
+            height: initial;
+        }
+
+        .wp_paging .pages_count {
+            display: flex;
+            align-items: center;
+        }
+
+        .wp_paging .pages_count, .wp_paging .page_nav {
+            height: 40px;
+        }
+
+        .wp_paging .pages_count span, .wp_paging .page_jump span, .wp_paging .page_jump a {
+            color: #C0C0C0;
+            font-size: 18px;
+            font-weight: 400;
+            font-family: "";
+            line-height: initial;
+        }
+
+        .wp_paging .page_jump a {
+            line-height: initial;
+        }
+
+        .wp_paging .page_jump {
+            display: flex;
+            align-items: center;
+        }
+
+        .wp_paging .page_jump input {
+            height: 36px;
+            width: 39px;
+            border: 2px solid #C5CFD8;
+            border-radius: 10px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            color: #C0C0C0;
+            font-size: 18px;
+            font-weight: 400;
+            font-family: "";
+            line-height: 17px;
+            color: #2E2E2E;
+        }
+
+        .first {
+            margin-left: 0 !important;
+        }
+
+        .page_button {
+            background: #CD0708;
+            width: 41px;
+            height: 41px;
+            border-radius: 100%;
+            margin-right: 22px;
+            position: relative;
+        }
+
+        .page_button:last-child {
+            margin-right: 0;
+        }
+
+        .page_button .pre_pre, .page_button .pre, .page_button .next, .page_button .next_next {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 10px;
+            height: 10px;
+        }
+
+        .page_button .pre, .page_button .pre_pre, .page_button .next, .page_button .next_next {
+            border-top: 2px solid #FFFFFF;
+            border-left: 2px solid #FFFFFF;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+
+        .page_button .pre_pre:after, .page_button .next_next:after {
+            margin: 4px;
+            position: absolute;
+            border-top: 2px solid #FFFFFF;
+            border-left: 2px solid #FFFFFF;
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+        }
+
+        .page_button .pre_pre {
+            left: -5px;
+        }
+
+        .page_button .next {
+            -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+        }
+
+        .page_button .next_next {
+            -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+            left: 5px;
+        }
+    </style>
+<style>
+#Footer .link-container a {
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+    font-weight: 300;
+    color: #FFFFFF;
+}
+
+</style>
+
+<style>
+#Navigator .nav-container .nav-sel .temp {
+color: #393939;
+transition: color .3s ease;
+}
+#Navigator .nav-container > div:nth-child(2):hover .temp, #Navigator .nav-container > div:nth-child(3):hover .temp, #Navigator .nav-container > div:nth-child(7):hover .temp {
+    color: #fff;
+}
+</style>
+<style>
+.content_container .content {
+font-weight: normal !important;
+}
+.league-icon>a {
+cursor: default;
+}
+</style>
+    <style>
+        .message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 200%);
+        }
+    </style>
+<style>
+.message {
+transform: translate(-50%, 300%);
+opacity: 0;
+}
+</style>
+<style>
+#body .right_list ul li .content_container a .content {
+    display: inline !important;
+    width: 750px !important;
+}
+#body .right_list ul li .content_container a {
+    max-width: 750px !important;
+}
+#body .right_list ul {
+padding: 0 26px 0 26px !important;
+}
+</style>
+
 </head>
 <body>
+<div class="cover-container">
+    <div class="cover"></div>
+    <div class="preloader loading">
+        <span class="slice"></span>
+        <span class="slice"></span>
+        <span class="slice"></span>
+        <span class="slice"></span>
+        <span class="slice"></span>
+        <span class="slice"></span>
+    </div>
+    <span class="message">如长时间无法正常打开，请使用新版 Edge 浏览器、Chrome 浏览器或 Firefox 浏览器并检查网络连接</span>
+<script>
+setTimeout(function () {
+try {
+document.getElementsByClassName("message")[0].style.opacity = 1;
+} catch(e) {}
+}, 7000);
+</script>
+</div>
 <div id="Header">
     <div class="header-icons">
         <div class="league-icon">
-            <a href="./">
+            <a href="javascript:void(0)">
                 <div class="tw-logo">
                     <img src="images/tw.png" alt="">
                 </div>
@@ -34,56 +279,65 @@
 </div>
 
 <nav id="Navigator">
-    <ul class="nav-container">
-        <li class="nav-sel">
-            <a href="./"><span>首页</span></a>
-        </li>
-        <li class="nav-sel">
-            <a href="./"><span>团委概况</span>
-            </a>
-            <ul class="sub-nav-container">
-                <li class="nav-sel sub-nav-sel"><a href="./"><span>团委介绍</span></a></li>
-                <li class="nav-sel sub-nav-sel"><a href="./"><span>岗位设置</span></a></li>
-                <li class="nav-sel sub-nav-sel"><a href="./"><span>工作人员</span></a></li>
-            </ul>
-        </li>
-        <li class="nav-sel">
-            <a href="./"><span>思想引领</span></a>
-            <ul class="sub-nav-container">
-                <li class="nav-sel sub-nav-sel"><a href="./"><span>主题教育</span></a></li>
-                <li class="nav-sel sub-nav-sel"><a href="./"><span>青马工程</span></a></li>
-            </ul>
-        </li>
-        <li class="nav-sel">
-            <a href="./"><span>社会实践</span></a>
-        </li>
-        <li class="nav-sel">
-            <a href="./"><span>创新创业</span></a>
-        </li>
-        <li class="nav-sel">
-            <a href="./"><span>校园文化</span></a>
-        </li>
-        <li class="nav-sel">
-            <a href="./"><span>规章制度</span></a>
-            <ul class="sub-nav-container">
-                <li class="nav-sel sub-nav-sel"><a href="./"><span>上级文件</span></a></li>
-                <li class="nav-sel sub-nav-sel"><a href="./"><span>团委文件</span></a></li>
-            </ul>
-        </li>
-        <li class="nav-sel">
-            <a href="./"><span>学生社团</span></a>
-        </li>
-        <li class="nav-sel">
-            <a href="./"><span>学生组织</span></a>
-        </li>
-        <li class="search-container">
-            <button id="submit-search">
-                <img src="images/搜索@2x.png" alt="">
-            </button>
-            <label for="search-web" style="display: none"></label>
-            <input type="text" id="search-web" placeholder="搜索">
-        </li>
-    </ul>
+    <div class="nav-container">
+        <div class="nav-sel single-sel">
+            <div class="temp" frag="窗口99">首页</div>
+        </div>
+        <div class="nav-sel multi-sel">
+            <div class="temp">团委概况</div>
+            <div class="sub-nav-container">
+                <div class="nav-sel sub-nav-sel">
+                    <div class="temp" frag="窗口12">团委介绍</div>
+                </div>
+                <div class="nav-sel sub-nav-sel">
+                    <div class="temp" frag="窗口13">岗位设置</div>
+                </div>
+                <div class="nav-sel sub-nav-sel">
+                    <div class="temp" frag="窗口14">工作人员</div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-sel multi-sel">
+            <div class="temp">思想引领</div>
+            <div class="sub-nav-container">
+                <div class="nav-sel sub-nav-sel">
+                    <div class="temp" frag="窗口15">主题教育</div>
+                </div>
+                <div class="nav-sel sub-nav-sel">
+                    <div class="temp" frag="窗口16">青马工程</div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-sel single-sel">
+            <div class="temp" frag="窗口17">社会实践</div>
+        </div>
+        <div class="nav-sel single-sel">
+            <div class="temp" frag="窗口18">创新创业</div>
+        </div>
+        <div class="nav-sel single-sel">
+            <div class="temp" frag="窗口19">校园文化</div>
+        </div>
+        <div class="nav-sel multi-sel">
+            <div class="temp">规章制度</div>
+            <div class="sub-nav-container">
+                <div class="nav-sel sub-nav-sel">
+                    <div class="temp" frag="窗口20">上级文件</div>
+                </div>
+                <div class="nav-sel sub-nav-sel">
+                    <div class="temp" frag="窗口21">团委文件</div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-sel single-sel">
+            <div class="temp" frag="窗口22">学生社团</div>
+        </div>
+        <div class="nav-sel single-sel">
+            <div class="temp" frag="窗口23">学生组织</div>
+        </div>
+        <div class="search-container">
+            <div class="temp" frag="窗口84"></div>
+        </div>
+    </div>
 </nav>
 
 <div id="banner">
@@ -92,12 +346,10 @@
 
 <div id="body">
     <div class="left_list">
-        <div class="title">
-                <span>
-                    思想引领
-                </span>
-        </div>
-        <div class="child_selection">
+        <div class="title"> <span>
+                    <div frag="窗口44">思想引领</div>
+                </span></div>
+        <div class="child_selection" frag="窗口56">
             <ul>
                 <li class="selected">
                     <a href="">
@@ -112,272 +364,8 @@
             </ul>
         </div>
     </div>
-    <div class="right_list">
-        <ul>
-            <li>
-                            <span class="time">
-                                06-27
-                            </span>
-                <div class="content_container">
-                    <a href="#">
-                                    <span class="content">
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...中国海洋大学第二十一届研究生支教团培...
-                                    </span>
-                    </a>
-                    <a href="#" class="child_content">
-                                    <span class="content">
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...中国海洋大学第二十一届研究生支教团培...
-                                    </span>
-                    </a>
-                </div>
-            </li>
-            <li>
-                            <span class="time">
-                                06-27
-                            </span>
-                <div class="content_container">
-                    <a href="#">
-                                    <span class="content">
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...中国海洋大学第二十一届研究生支教团培...
-                                    </span>
-                    </a>
-                    <a href="#" class="child_content">
-                                         <span class="content">
-                                            中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...中国海洋大学第二十一届研究生支教团培...
-                                        </span>
-                    </a>
-                </div>
-            </li>
-            <li>
-                            <span class="time">
-                                06-27
-                            </span>
-                <div class="content_container">
-                    <a href="#">
-                                    <span class="content">
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...中国海洋大学第二十一届研究生支教团培...
-                                    </span>
-                    </a>
-                    <a href="#" class="child_content">
-                                    <span class="content">
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...中国海洋大学第二十一届研究生支教团培...
-                                    </span>
-                    </a>
-                </div>
-            </li>
-            <li>
-                            <span class="time">
-                                06-27
-                            </span>
-                <div class="content_container">
-                    <a href="#">
-                                    <span class="content">
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...中国海洋大学第二十一届研究生支教团培...
-                                    </span>
-                    </a>
-                    <a href="#" class="child_content">
-                                         <span class="content">
-                                            中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...中国海洋大学第二十一届研究生支教团培...
-                                        </span>
-                    </a>
-                </div>
-            </li>
-            <li>
-                            <span class="time">
-                                06-27
-                            </span>
-                <div class="content_container">
-                    <a href="#">
-                                    <span class="content">
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...中国海洋大学第二十一届研究生支教团培...
-                                    </span>
-                    </a>
-                    <a href="#" class="child_content">
-                                    <span class="content">
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...中国海洋大学第二十一届研究生支教团培...
-                                    </span>
-                    </a>
-                </div>
-            </li>
-            <li>
-                            <span class="time">
-                                06-27
-                            </span>
-                <div class="content_container">
-                    <a href="#">
-                                    <span class="content">
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...中国海洋大学第二十一届研究生支教团培...
-                                    </span>
-                    </a>
-                    <a href="#" class="child_content">
-                                         <span class="content">
-                                            中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...
-                                        中国海洋大学第二十一届研究生支教团培...中国海洋大学第二十一届研究生支教团培...
-                                        </span>
-                    </a>
-                </div>
-            </li>
-            <li>
-                            <span class="time">
-                                06-27
-                            </span>
-                <div class="content_container">
-                    <a href="#">
-                                    <span class="content">
-                                        中国海洋大学第二十一届研究生支教团培...
-                                    </span>
-                    </a>
-                    <a href="#" class="child_content">
-                                        <span class="content">
-                                            中国海洋大学第二十一届研究生支教团培...
-                                        </span>
-                    </a>
-                </div>
-            </li>
-            <li>
-                            <span class="time">
-                                06-27
-                            </span>
-                <div class="content_container">
-                    <a href="#">
-                                    <span class="content">
-                                        中国海洋大学第二十一届研究生支教团培...
-                                    </span>
-                    </a>
-                    <a href="#" class="child_content">
-                                        <span class="content">
-                                            中国海洋大学第二十一届研究生支教团培...
-                                        </span>
-                    </a>
-                </div>
-            </li>
-            <li>
-                            <span class="time">
-                                06-27
-                            </span>
-                <div class="content_container">
-                    <a href="#">
-                                    <span class="content">
-                                        中国海洋大学第二十一届研究生支教团培...
-                                    </span>
-                    </a>
-                    <a href="#" class="child_content">
-                                    <span class="content">
-                                        中国海洋大学第二十一届研究生支教团培...
-                                    </span>
-                    </a>
-                </div>
-            </li>
-            <li>
-                            <span class="time">
-                                06-27
-                            </span>
-                <div class="content_container">
-                    <a href="#">
-                                    <span class="content">
-                                        中国海洋大学第二十一届研究生支教团培...
-                                    </span>
-                    </a>
-                    <a href="#" class="child_content">
-                                    <span class="content">
-                                        中国海洋大学第二十一届研究生支教团培...
-                                    </span>
-                    </a>
-                </div>
-            </li>
-        </ul>
-        <div class="page_panel">
-            <div class="total">
-                每页10条，共47条
-            </div>
-            <div class="page_button_box">
-                <div href="" class="page_button none">
-                    <div class="pre_pre">
+    <div class="right_list" frag="窗口999">
 
-                    </div>
-                </div>
-                <div href="" class="page_button none">
-                    <div class="pre">
-
-                    </div>
-                </div>
-                <div href="" class="page_button">
-                    <div class="next">
-
-                    </div>
-                </div>
-                <div href="" class="page_button">
-                    <div class="next_next">
-
-                    </div>
-                </div>
-            </div>
-            <div class="jump_panel">
-                    <span>
-                        第 1/4 页 跳转
-                    </span>
-                <input type="text"/>
-            </div>
-        </div>
     </div>
 </div>
 
@@ -392,7 +380,7 @@
                     © 共青团中国海洋大学委员会 版权所有
                 </p>
                 <p>
-                    地址：青岛市崂山区松岭路238号   邮编：266100
+                    地址：青岛市崂山区松岭路238号 邮编：266100
                 </p>
                 <p>
                     <span>
@@ -412,20 +400,20 @@
                 <div class="link-title">
                     友情链接
                 </div>
-                <ul class="link-container">
-                    <li class="link">
-                        <a href="">共青团中央</a>
-                    </li>
-                    <li>
-                        <a href="">山东共青团</a>
-                    </li>
-                    <li>
-                        <a href="">山东省学联</a>
-                    </li>
-                    <li>
-                        <a href="">中国海洋大学</a>
-                    </li>
-                </ul>
+                <div class="link-container">
+                    <div frag="窗口400">
+                        共青团中央
+                    </div>
+                    <div frag="窗口401">
+                        山东共青团
+                    </div>
+                    <div frag="窗口402">
+                        山东省学联
+                    </div>
+                    <div frag="窗口404">
+                        中国海洋大学
+                    </div>
+                </div>
             </div>
             <div class="qr-code-container">
                 <div class="qr-code">
@@ -450,5 +438,167 @@
 </div>
 
 </body>
+<!--<script src="js/listColumn.js"></script>-->
+<script src="js/itStudio.js"></script>
+<script>
+const statusEnum = {
+    DONE: 1,
+    ERR: 0
+}
 
+function getElement(q) {
+    try {
+        return {
+            status: statusEnum.DONE,
+            data: document.querySelector(q)
+        };
+    } catch (e) {
+        return {
+            status: statusEnum.ERR,
+            data: e.toString()
+        }
+    }
+}
+
+function getElements(q) {
+    try {
+        return {
+            status: statusEnum.DONE,
+            data: [
+                ...document.querySelectorAll(q)
+            ]
+        }
+    } catch (e) {
+        return {
+            status: statusEnum.ERR,
+            data: e.toString()
+        }
+    }
+}
+
+function createElement(tagName, attr) {
+    let tag = document.createElement(tagName);
+    Object.assign(tag, attr);
+    return tag;
+}
+
+function setAttr(target, arr) {
+    try {
+        Object.assign(target.style, arr)
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+function initLeftNav() {
+    let container = getElement(".child_selection>div .wp_listcolumn").data;
+    let lists = getElements(".child_selection>div .wp_listcolumn .wp_column").data;
+
+    lists.forEach(i => {
+        i.classList.remove(["wp_column"]);
+    });
+    container.classList.remove("wp_listcolumn");
+}
+
+function initArticleList() {
+    let preContainer = getElement("#body .right_list .wp_article_list").data;
+    let articleList = getElements("#body .right_list .wp_article_list .list_item").data;
+    let container = createElement("ul");
+    let containerPar = getElement("#body .right_list").data;
+    articleList.forEach(i => {
+        let article = createElement("li");
+        let articleTitleLink = i.querySelector(".Article_Title a");
+        let articleTitle  = articleTitleLink.innerText;
+        let articleTime = i.querySelector(".Article_PublishDate").innerText.split("-");
+        let articleSubTitleLink = i.querySelector(".Article_Summary a");
+        let articleSubTitle = articleSubTitleLink.innerText;
+        let time = `<div class="time"><div class="month">${articleTime[1]}-${articleTime[2]}</div><div class="year">${articleTime[0]}</div></div>`;
+        let contentContainer = createElement("div", {
+            className: "content_container"
+        });
+        Object.assign(articleTitleLink, {
+            innerHTML: `<div class="content">${articleTitle}</div>`
+        });
+        Object.assign(articleSubTitleLink, {
+            className: "child_content",
+            innerHTML: `<span class="content">${articleSubTitle}</span>`
+        });
+        contentContainer.appendChild(articleTitleLink);
+        contentContainer.appendChild(articleSubTitleLink);
+        article.innerHTML = time;
+        article.appendChild(contentContainer);
+        container.appendChild(article);
+    });
+    containerPar.insertBefore(container, getElement("#body .right_list>div").data);
+try {
+    setAttr(preContainer, {
+        display: "none"
+    });
+        initPageButton();
+} catch(e) {
+console.log("内容可能为空");
+console.log(e);
+}
+
+}
+
+function initPageButton() {
+    let first = document.getElementsByClassName('first')[0];
+    let pre = document.getElementsByClassName('prev')[0];
+    let next = document.getElementsByClassName('next')[0];
+    let last = document.getElementsByClassName('last')[0];
+
+    const target = {
+        first,
+        pre,
+        next,
+        last
+    };
+
+    const targetInnerHtml = {
+        first: `<div class="page_button none"><div class="pre_pre"></div></div>`,
+        pre: `<div class="page_button none"><div class="pre"></div></div>`,
+        next: `<div class="page_button"><div class="next"></div></div>`,
+        last: `<div class="page_button"><div class="next_next"></div></div>`
+    };
+
+    for(let item in targetInnerHtml) {
+        target[item].innerHTML = targetInnerHtml[item];
+    }
+}
+
+function initFooterNav() {
+    let list = [...document.querySelectorAll("#Footer .link-container>div")];
+    let container = document.querySelector("#Footer .link-container");
+    list.forEach(i => {
+        let navContainer = createElement("div", {
+            className: "link"
+        });
+        let nav = i.querySelector(".Article_Title a").cloneNode(true);
+        navContainer.appendChild(nav);
+        container.appendChild(navContainer);
+        setAttr(i, {
+            display: "none"
+        });
+    });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    try {
+        initLeftNav();
+        initArticleList();
+initFooterNav();
+        setAttr(getElement(".cover-container").data, {
+            opacity: 0
+        });
+        setTimeout(() => {
+            getElement(".cover-container").data.remove();
+        }, 500);
+    } catch (e) {
+        console.log(e);
+        console.log("Unexpected errors occurred");
+document.getElementsByClassName("message")[0].innerText = "未知错误发生，请升级您的浏览器版本或联系网站管理员";
+    }
+});
+</script>
 </html>
